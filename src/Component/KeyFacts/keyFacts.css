@@ -1,0 +1,180 @@
+
+    .mainboxkey{
+        width: 95vw;
+        height: 600px;
+        border: 1px solid red;
+        /* border: 1px solid red; */
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+        /* overflow: scroll; */
+       margin: auto;
+       padding-left: 3vw;
+        margin-top: 20px;
+        grid-gap: 10px;
+        animation-name: centerbox;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+ 
+
+    }
+    @keyframes centerbox {
+        
+        0%{
+            margin-top: 90vh;
+            /* position: fixed; */
+            .left{
+                /* display: none; */
+                visibility: hidden;
+            }
+        }
+        50%{
+            margin-top: 0px;
+            /* position: fixed; */
+
+        }
+        100%{
+            margin-top: 0px;
+            /* position: fixed; */
+
+           
+        }
+    }
+   
+    .center{
+        overflow: visible;
+        /* position: fixed; */
+        width: 35vw;
+        height: 290px;
+        margin-left: -5vw;
+        margin-top: 120px;
+        background-color: black;
+        z-index: 10;
+    }
+
+    .left{
+     
+        display: grid;
+    grid-template-columns: 1fr;
+        grid-gap: 200px;
+        width: 32vw;
+      
+        
+         
+    }
+    .left :nth-child(1){
+        background-color: yellow;
+        animation-name: example;
+        /* animation-fill-mode: forwards; */
+      
+        height: 160px;
+  animation-duration: 4s;
+  width: 32vw;
+  animation-iteration-count: 1;
+  /* animation-delay: 4s; */
+  
+
+    }
+  
+    @keyframes example {
+     
+  0%   {
+        margin-right: -30px;
+     visibility: hidden;}
+       
+  50%   {margin-top: 200px;
+       margin-left: 400px;
+       width: 400px;
+    visibility: hidden}
+
+  /* 25%   {margin-top: 130px; position: fixed; width: 200px;height: 70px;}
+  50%   {margin-top: 80px; position: fixed; width: 270px;height: 100px;}
+  75%   {margin-top: 50px; position: fixed; width: 300px;height: 130px;}
+  */
+  /* 50%   {margin-top: 30px;position: fixed;} */
+  100%   {margin-top: 0px;   width: 400px;}
+
+
+
+  /* 25%  {background-color: yellow;} */
+ 
+}
+    .left :nth-child(2){
+        background-color: rgb(122, 122, 76);
+        animation-name: examplep;
+  animation-duration: 4s;
+  width: 32vw;
+  height: 160px;
+  /* animation-delay: 4s; */
+
+    }
+
+    @keyframes examplep {
+   
+
+  0%   {
+    margin-right: -30px;
+ visibility: hidden;}
+   
+50%   {margin-top: -50vh;
+   margin-left: 400px;
+   width: 32vw;
+visibility: hidden}
+  100%   {margin-top: 0px; width: 32vw;}
+
+}
+    .right{
+        margin-left:-5vw;
+        display: grid;
+    grid-template-columns: 1fr;
+        grid-gap: 200px;
+        width: 32vw;
+
+
+    }
+    .right :nth-child(1){
+        background-color: rgb(45, 142, 199);
+        animation-name: examplepf;
+  animation-duration: 4s;
+  height: 160px;
+  width: 32vw;
+
+  /* animation-delay: 4s; */
+
+    }
+
+    @keyframes examplepf {
+        0%   {margin-top: 120px;margin-left: -430px;visibility: hidden;}
+        50%   {margin-top: 120px;margin-left: -430px;visibility: hidden;}
+
+  /* 25%   {margin-top: 200px;position: fixed;}
+  50%   {margin-top: 220px;position: fixed;} */
+  100%   {margin-top: 0px}
+
+}
+    .right :nth-child(2){
+        background-color: rgb(99, 28, 128);
+        animation-name: exampleps;
+  animation-duration: 4s;
+  height: 160px;
+
+  width: 32vw;
+
+  /* animation-delay: 4s; */
+
+    }
+
+    @keyframes exampleps {
+       
+  0%   {
+    margin-left: -430px;
+ visibility: hidden;}
+   
+50%   {margin-top: -50vh;
+   margin-left: -430px;
+   width: 32vw;
+visibility: hidden}
+  100%   {margin-top: 0px; width: 32vw}
+
+}
+    
+    

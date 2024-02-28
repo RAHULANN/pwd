@@ -6,7 +6,7 @@
     font-family: "SF Pro Display";
     display: grid;
     grid-template-areas: "logo logo nav";
-  
+  z-index: 15;
     /* Cosmetics */
     background-color: #ffffff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
