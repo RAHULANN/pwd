@@ -76,7 +76,7 @@ const theme = createTheme({
       onText: "#FFFFFF",
       border: "#D9D9D9",
       container: "#E9F0F4",
-      bg: "#F7F7FB",
+      bg: "#FFFFFF",
       disabled: "#B2B9C0",
     },
     secondary: {
