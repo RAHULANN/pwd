@@ -3,7 +3,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
   typography: {
     allVariants: {
-      fontFamily: ["Poppins", "sans-serif"].join(","),
+      fontFamily: ["Sf pro Display", "sans-serif"].join(","),
       textTransform: "none",
       fontSize: 16,
     },
@@ -19,10 +19,14 @@ const theme = createTheme({
     h3: {
       fontSize: 48,
       fontWeight: 600,
+      letterSpacing: 1.25,
+      color: "#2C2C2E",
     },
     h4: {
-      fontSize: 32,
+      fontSize: 40,
       fontWeight: 600,
+      letterSpacing: 1.5,
+      color: "#222224",
     },
     h5: {
       fontSize: 24,
@@ -33,8 +37,10 @@ const theme = createTheme({
       fontWeight: 600,
     },
     subtitle1: {
-      fontSize: 16,
+      fontSize: 29,
       fontWeight: 600,
+      letterSpacing: 1,
+      color: "#2A4596",
     },
     subtitle2: {
       fontSize: 14,
@@ -42,30 +48,67 @@ const theme = createTheme({
     },
 
     body1: {
-      fontSize: 16,
-
-      fontWeight: 400,
+      fontSize: 20,
+      color: "#636366",
+      fontWeight: 600,
+      letterSpacing: 1.5,
     },
 
     body2: {
-      fontSize: 14,
+      fontSize: 20,
+      letterSpacing: 0.5,
 
-      fontWeight: 400,
+      fontWeight: 600,
+      color: "#3A3A3C",
     },
-    button: {
+
+    body3: {
+      fontSize: 25,
+      letterSpacing: 1.5,
+
+      fontWeight: 600,
+      color: "#3A3A3C",
+    },
+
+    body4: {
+      fontSize: 20,
+      letterSpacing: 1.5,
+
+      fontWeight: 500,
+      color: "#3A3A3C",
+    },
+    button1: {
+      fontSize: 16,
+
+      fontWeight: 500,
+    },
+
+    button2: {
+      fontSize: 13,
+      color: "#3A3A3C",
+      fontWeight: 600,
+      letterSpacing: 1.25,
+    },
+
+    button3: {
       fontSize: 16,
 
       fontWeight: 600,
+      letterSpacing: 1,
+      color: "#3A3A3C",
+    },
+    callout: {
+      fontSize: 20,
+      letterSpacing: 0.71,
+      fontWeight: 500,
+      color: "#222224",
     },
     level: {
-      fontSize: 12,
-
-      fontWeight: 600,
-    },
-    caption: {
-      fontSize: 12,
+      fontSize: 20,
 
       fontWeight: 400,
+      letterSpacing: 4,
+      color: "#222224",
     },
   },
   palette: {
