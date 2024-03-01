@@ -3,7 +3,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
   typography: {
     allVariants: {
-      fontFamily: ["Sf pro Display", "sans-serif"].join(","),
+      fontFamily: ["Sf pro Display"].join(","),
       textTransform: "none",
       fontSize: 16,
     },
@@ -17,8 +17,8 @@ const theme = createTheme({
       fontWeight: 600,
     },
     h3: {
-      fontSize: 48,
-      fontWeight: 600,
+      fontSize: 38,
+      fontWeight: 700,
       letterSpacing: 1.25,
       color: "#2C2C2E",
     },
@@ -48,9 +48,9 @@ const theme = createTheme({
     },
 
     body1: {
-      fontSize: 20,
+      fontSize: 19,
       color: "#636366",
-      fontWeight: 600,
+      fontWeight: 500,
       letterSpacing: 1.5,
     },
 
@@ -119,6 +119,7 @@ const theme = createTheme({
       onText: "#FFFFFF",
       border: "#D9D9D9",
       container: "#E9F0F4",
+      button: "#2A4596",
       bg: "#FFFFFF",
       disabled: "#B2B9C0",
     },

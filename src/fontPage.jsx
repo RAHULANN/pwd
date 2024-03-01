@@ -7,7 +7,8 @@ export default function FontPage() {
       <Box>
         <Typography variant="h3">
           {" "}
-          Headline Sf pro Display Bold 48 Letter spacing 1.25%{" "}
+          Extend Equipment lifespan with our advanced Scaling And Corrosion
+          Inhibitors!
         </Typography>
 
         <Typography variant="h4">
