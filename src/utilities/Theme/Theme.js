@@ -63,7 +63,7 @@ const theme = createTheme({
     },
 
     body3: {
-      fontSize: 25,
+      fontSize: 22,
       letterSpacing: 1.5,
 
       fontWeight: 600,

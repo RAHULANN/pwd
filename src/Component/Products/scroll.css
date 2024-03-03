@@ -1,0 +1,78 @@
+.arrow {
+    position: absolute;
+    z-index: 1;
+    left: 35px;
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 12px;
+    box-shadow: var(--light-shadow);
+    opacity: 1;
+    transition: all 0.3s;
+    opacity: 0;
+  }
+  .horizontalskeletons {
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+    width: 90%;
+    margin: 0 auto
+  }
+  .horizontalskeletons::-webkit-scrollbar {
+    height: 0
+  }
+  .horizontalskeletons .skeleton {
+    min-width: 500px;
+  }
+  .arrow:last-of-type {
+    right: 35px;
+    left: initial
+  }
+  .test{
+    width: 90vw;
+    height: 70px;
+     display: flex;
+     background: #E4F2FC;
+     position: sticky;
+     top: 80px;
+     gap: 20px;
+     padding: 10px;
+     justify-content: center;
+     align-items: center;
+     justify-items: center;
+margin: auto;
+     text-align: center;
+     font-size: 16px;
+     font-weight: 600;
+  }
+  
+  .react-horizontal-scrolling-menu--item{
+    background: #2A4596;
+        height: 40px;
+        width: 200px;
+        margin: auto;
+       border-radius: 10px;
+        color: #FFF;
+      
+      
+
+  }
+
+  .react-horizontal-scrolling-menu--arrow-left{
+    display: flex;
+    align-items: center;
+
+  }
+
+  .react-horizontal-scrolling-menu--arrow-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+    background-color: #E4F2FC;
+
+  }

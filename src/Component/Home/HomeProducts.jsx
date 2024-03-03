@@ -2,13 +2,15 @@ import React from "react";
 import product2 from "../../utilities/Icons/product2.png";
 import product3 from "../../utilities/Icons/product3.png";
 import { Box, Button, Typography } from "@mui/material";
-
+import "./prpduct23.css";
 export default function HomeProducts() {
   return (
     <div
+      className="product23home"
       style={{
         width: "90%",
         display: "grid",
+
         gridTemplateColumns: "1fr 1fr",
         gap: "30px",
         // border: "1px solid red",
@@ -19,7 +21,6 @@ export default function HomeProducts() {
       }}
     >
       <Box
-        className="product1home"
         sx={{
           display: "grid",
           gridTemplateRows: "300px 300px",
@@ -88,7 +89,6 @@ export default function HomeProducts() {
         </Box>
       </Box>
       <Box
-        className="product1home"
         sx={{
           display: "grid",
           gridTemplateRows: "300px 300px",

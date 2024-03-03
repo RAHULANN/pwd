@@ -1,8 +1,8 @@
 
     .mainboxkey{
-        width: 95vw;
+        width: 97vw;
         height: 600px;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         /* border: 1px solid red; */
         display: grid;
         grid-template-columns: 2fr 2fr 2fr;
@@ -43,32 +43,50 @@
     .center{
         overflow: visible;
         /* position: fixed; */
-        width: 35vw;
+        width: 33vw;
         height: 290px;
-        margin-left: -5vw;
-        margin-top: 120px;
-        background-color: black;
+        margin-left: -3vw;
+        margin-top: 130px;
+        background-color: #FFF;
         z-index: 10;
+        align-content: center;
+        text-align: center;
+        border-radius: 18px;
+        border: 0.5px solid #D9D9D9;
     }
+
 
     .left{
      
         display: grid;
     grid-template-columns: 1fr;
         grid-gap: 200px;
-        width: 32vw;
+        width: 31vw;
       
         
          
     }
-    .left :nth-child(1){
-        background-color: yellow;
+    .firstboxanimation{
+ 
         animation-name: example;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+        ;
         /* animation-fill-mode: forwards; */
-      
+      border-radius: 39.51px;
         height: 160px;
   animation-duration: 4s;
-  width: 32vw;
+  background-color: rgba(245, 251, 255, 1);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  gap:10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  width: 31vw;
   animation-iteration-count: 1;
   /* animation-delay: 4s; */
   
@@ -98,11 +116,20 @@
   /* 25%  {background-color: yellow;} */
  
 }
-    .left :nth-child(2){
-        background-color: rgb(122, 122, 76);
+    .secondboxanimation{
+      background-color: rgba(245, 251, 255, 1);
+      justify-content: center;
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+        ;
+      display: flex;
+      border-radius: 39.51px;
+      gap:20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      align-items: center;
         animation-name: examplep;
   animation-duration: 4s;
-  width: 32vw;
+  width: 31vw;
   height: 160px;
   /* animation-delay: 4s; */
 
@@ -127,16 +154,25 @@ visibility: hidden}
         display: grid;
     grid-template-columns: 1fr;
         grid-gap: 200px;
-        width: 32vw;
+        width: 31vw;
 
 
     }
-    .right :nth-child(1){
-        background-color: rgb(45, 142, 199);
+    .threeanimationbox{
+      background-color: rgba(245, 251, 255, 1);
+      justify-content: center;
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+        ;
+      display: flex;
+      border-radius: 39.51px;
+      gap:30px;
+      padding-left: 20px;
+      padding-right: 20px;
+      align-items: center;
         animation-name: examplepf;
   animation-duration: 4s;
   height: 160px;
-  width: 32vw;
+  width: 31vw;
 
   /* animation-delay: 4s; */
 
@@ -151,13 +187,22 @@ visibility: hidden}
   100%   {margin-top: 0px}
 
 }
-    .right :nth-child(2){
-        background-color: rgb(99, 28, 128);
+    .fouranimationbox{
+      background-color: rgba(245, 251, 255, 1);
+      justify-content: center;
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+        ;
+      display: flex;
+      border-radius: 39.51px;
+      gap:20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      align-items: center;
         animation-name: exampleps;
   animation-duration: 4s;
   height: 160px;
 
-  width: 32vw;
+  width: 31vw;
 
   /* animation-delay: 4s; */
 
