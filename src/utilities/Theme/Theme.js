@@ -43,8 +43,10 @@ const theme = createTheme({
       color: "#2A4596",
     },
     subtitle2: {
-      fontSize: 14,
+      fontSize: 29,
       fontWeight: 600,
+      letterSpacing: 1,
+      color: "#222224",
     },
 
     body1: {

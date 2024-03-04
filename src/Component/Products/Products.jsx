@@ -7,6 +7,7 @@ import Horizontalscroll from "./Scroll";
 import Menu from "./sc";
 import Sc from "./sc";
 import { HashLink } from "react-router-hash-link";
+import ContectProduct from "./ContectProduct";
 
 export default function Products() {
   const [currentState, setCurrentState] = useState("prod0");
@@ -74,7 +75,7 @@ export default function Products() {
           position: "sticky",
           top: "80px",
           mt: "90px",
-
+          zIndex: 400,
           justifyContent: "center",
         }}
       >
@@ -152,6 +153,10 @@ export default function Products() {
           <ProductBox data={el} index={index} />
         </section>
       ))}
+
+      <Box>
+        <ContectProduct />
+      </Box>
     </div>
   );
 }

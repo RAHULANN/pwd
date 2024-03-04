@@ -18,6 +18,7 @@ export default function ProductBox({ data, index = 0 }) {
         gridGap: "20px",
         height: "550px",
         width: "95vw",
+
         flexDirection: index % 2 > 0 ? "row-reverse" : "row",
         marginLeft: "auto",
         marginRight: "auto",

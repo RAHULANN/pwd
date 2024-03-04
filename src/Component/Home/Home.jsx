@@ -12,10 +12,13 @@ import HomeProduct45 from "./HomeProduct45";
 import HomeProduct67 from "./HomeProduct67";
 import KeyFacts from "../KeyFacts/KeyFacts";
 import Contectus from "../Contect/Contectus";
+import ContactUsPopUp from "../Contect/PopUp";
 export default function Home() {
   const [currents, setCurrents] = useState({
     home: "home",
   });
+
+  const [contactUsPopUpState, setContactUsPopUpState] = useState(false);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     // document.getElementById("keyfacts").style.display = "none";
@@ -55,6 +58,12 @@ export default function Home() {
   return (
     <div>
       <Header />
+      <ContactUsPopUp
+        open={contactUsPopUpState}
+        onClose={() => {
+          setContactUsPopUpState(false);
+        }}
+      />
       <div
         style={{
           marginTop: "90px",
@@ -137,6 +146,9 @@ export default function Home() {
                     background: (theme) => theme.palette.primary.button,
 
                     color: "#FFFFFF",
+                  }}
+                  onClick={() => {
+                    setContactUsPopUpState(true);
                   }}
                 >
                   <Typography variant="button1">Get A Call Back</Typography>
