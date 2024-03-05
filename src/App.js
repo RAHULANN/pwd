@@ -12,12 +12,16 @@ import {
 import Home from "./Component/Home/Home";
 import Products from "./Component/Products/Products";
 import FontPage from "./fontPage";
+import Login from "./Component/Login/Login";
+import HomeTable from "./Component/Admin/adminHome";
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/admin/login" element={<Login />} />
+          <Route path="/admin" element={<HomeTable />} />
 
           <Route path="/font" element={<FontPage />} />
 
