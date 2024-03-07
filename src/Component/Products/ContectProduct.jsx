@@ -12,6 +12,7 @@ import linkedin from "../../utilities/Icons/aboutus/linkedin.png";
 import whatsapp from "../../utilities/Icons/aboutus/whatsapp.png";
 import "../Contect/contect.css";
 import LabelIcon from "@mui/icons-material/Label";
+import { handleSubmit } from "../Contect/formFirebase";
 
 export default function ContectProduct() {
   const [data, setData] = useState([
@@ -20,6 +21,24 @@ export default function ContectProduct() {
     "Prevention of deposits, corrosion, and fouling.",
     "Unmatched efficiency, safety, and environmental responsibility.",
   ]);
+
+  const init = {
+    name: "",
+    email: "",
+    phone: "",
+    howwecanhelp: "",
+  };
+  const [formData, setFormData] = useState(init);
+
+  const saveForm = async () => {
+    handleSubmit(formData)
+      .then(() => {
+        // handleClose();
+      })
+      .catch((er) => {
+        alert("something went wrong");
+      });
+  };
   return (
     <Box
       className="contact"
@@ -130,6 +149,11 @@ export default function ContectProduct() {
               outline: "none",
               color: "#AEAEB2",
             }}
+            value={formData.name}
+            onChange={(e) => {
+              setFormData((prev) => ({ ...prev, name: e.target.value }));
+            }}
+            required={true}
             placeholder={"name *"}
           />
         </Box>
@@ -144,6 +168,11 @@ export default function ContectProduct() {
               outline: "none",
               color: "#AEAEB2",
             }}
+            value={formData.email}
+            onChange={(e) => {
+              setFormData((prev) => ({ ...prev, email: e.target.value }));
+            }}
+            required={true}
             placeholder={"E-Mail ID *"}
           />
         </Box>
@@ -159,6 +188,11 @@ export default function ContectProduct() {
               outline: "none",
               color: "#AEAEB2",
             }}
+            value={formData.phone}
+            onChange={(e) => {
+              setFormData((prev) => ({ ...prev, phone: e.target.value }));
+            }}
+            required={true}
             placeholder={"Phone number *"}
           />
         </Box>
@@ -175,6 +209,14 @@ export default function ContectProduct() {
               outline: "none",
               color: "#AEAEB2",
             }}
+            value={formData.howwecanhelp}
+            onChange={(e) => {
+              setFormData((prev) => ({
+                ...prev,
+                howwecanhelp: e.target.value,
+              }));
+            }}
+            required={true}
             placeholder={"How can we help you "}
           />
         </Box>
@@ -192,6 +234,12 @@ export default function ContectProduct() {
               color: "#FFF",
               background: "#2C407C",
               padding: "0px, 16px, 0px, 16px",
+              ":hover": {
+                background: "#2C407C",
+              },
+            }}
+            onClick={() => {
+              saveForm();
             }}
           >
             <Typography variant="button">Get call back</Typography>

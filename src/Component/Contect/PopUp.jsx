@@ -9,6 +9,7 @@ import { Box, Button, Typography } from "@mui/material";
 import linkedin from "../../utilities/Icons/aboutus/linkedin.png";
 import whatsapp from "../../utilities/Icons/aboutus/whatsapp.png";
 import { Navigate, useNavigate } from "react-router";
+import { handleSubmit } from "./formFirebase";
 
 const ContactUsPopUp = (props) => {
   const { onClose, open, editDeleteState } = props;
@@ -18,26 +19,23 @@ const ContactUsPopUp = (props) => {
   const handleClose = () => {
     onClose();
   };
-  //   const saveForm = async (formData) => {
-  //     if (editDeleteState) {
-  //       let res = await patchDataFunction({
-  //         url: "assessment_grading",
-  //         data: formData,
-  //       });
-  //       if (res.message == "success") {
-  //         handleClose();
-  //       }
-  //       return;
-  //     }
+  const init = {
+    name: "",
+    email: "",
+    phone: "",
+    howwecanhelp: "",
+  };
+  const [formData, setFormData] = useState(init);
 
-  //     let res = await postData({
-  //       url: "assessment_grading",
-  //       data: formData,
-  //     });
-  //     if (res.message == "success") {
-  //       handleClose();
-  //     }
-  //   };
+  const saveForm = async () => {
+    handleSubmit(formData)
+      .then(() => {
+        handleClose();
+      })
+      .catch((er) => {
+        alert("something went wrong");
+      });
+  };
   return (
     <Dialog
       maxWidth="90vw"
@@ -251,6 +249,11 @@ const ContactUsPopUp = (props) => {
                   outline: "none",
                   color: "#AEAEB2",
                 }}
+                value={formData.name}
+                onChange={(e) => {
+                  setFormData((prev) => ({ ...prev, name: e.target.value }));
+                }}
+                required={true}
                 placeholder={"name *"}
               />
             </Box>
@@ -265,6 +268,11 @@ const ContactUsPopUp = (props) => {
                   outline: "none",
                   color: "#AEAEB2",
                 }}
+                value={formData.email}
+                onChange={(e) => {
+                  setFormData((prev) => ({ ...prev, email: e.target.value }));
+                }}
+                required={true}
                 placeholder={"E-Mail ID *"}
               />
             </Box>
@@ -280,6 +288,11 @@ const ContactUsPopUp = (props) => {
                   outline: "none",
                   color: "#AEAEB2",
                 }}
+                value={formData.phone}
+                onChange={(e) => {
+                  setFormData((prev) => ({ ...prev, phone: e.target.value }));
+                }}
+                required={true}
                 placeholder={"Phone number *"}
               />
             </Box>
@@ -297,6 +310,13 @@ const ContactUsPopUp = (props) => {
                   color: "#AEAEB2",
                 }}
                 placeholder={"How can we help you "}
+                value={formData.howwecanhelp}
+                onChange={(e) => {
+                  setFormData((prev) => ({
+                    ...prev,
+                    howwecanhelp: e.target.value,
+                  }));
+                }}
               />
             </Box>
 
@@ -313,6 +333,12 @@ const ContactUsPopUp = (props) => {
                   color: "#FFF",
                   background: "#2C407C",
                   padding: "0px, 16px, 0px, 16px",
+                  ":hover": {
+                    background: "#2C407C",
+                  },
+                }}
+                onClick={() => {
+                  saveForm();
                 }}
               >
                 <Typography variant="button">Get call back</Typography>

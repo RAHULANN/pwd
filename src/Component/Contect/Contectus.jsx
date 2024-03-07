@@ -1,9 +1,21 @@
 import { Box, Button, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import linkedin from "../../utilities/Icons/aboutus/linkedin.png";
 import whatsapp from "../../utilities/Icons/aboutus/whatsapp.png";
 import "./contect.css";
+import { handleSubmit } from "./formFirebase";
 export default function Contectus() {
+  const init = {
+    name: "",
+    email: "",
+    phone: "",
+    howwecanhelp: "",
+  };
+  const [formData, setFormData] = useState(init);
+
+  const saveForm = async () => {
+    await handleSubmit(formData);
+  };
   return (
     <Box
       className="contact"
@@ -139,6 +151,11 @@ export default function Contectus() {
               outline: "none",
               color: "#AEAEB2",
             }}
+            value={formData.name}
+            onChange={(e) => {
+              setFormData((prev) => ({ ...prev, name: e.target.value }));
+            }}
+            required={true}
             placeholder={"name *"}
           />
         </Box>
@@ -154,6 +171,11 @@ export default function Contectus() {
               color: "#AEAEB2",
             }}
             placeholder={"E-Mail ID *"}
+            value={formData.email}
+            onChange={(e) => {
+              setFormData((prev) => ({ ...prev, email: e.target.value }));
+            }}
+            required={true}
           />
         </Box>
         <Box>
@@ -168,6 +190,11 @@ export default function Contectus() {
               outline: "none",
               color: "#AEAEB2",
             }}
+            value={formData.phone}
+            onChange={(e) => {
+              setFormData((prev) => ({ ...prev, phone: e.target.value }));
+            }}
+            required={true}
             placeholder={"Phone number *"}
           />
         </Box>
@@ -185,6 +212,14 @@ export default function Contectus() {
               color: "#AEAEB2",
             }}
             placeholder={"How can we help you "}
+            value={formData.howwecanhelp}
+            onChange={(e) => {
+              setFormData((prev) => ({
+                ...prev,
+                howwecanhelp: e.target.value,
+              }));
+            }}
+            required={true}
           />
         </Box>
 
@@ -201,6 +236,12 @@ export default function Contectus() {
               color: "#FFF",
               background: "#2C407C",
               padding: "0px, 16px, 0px, 16px",
+              ":hover": {
+                background: "#2C407C",
+              },
+            }}
+            onClick={() => {
+              saveForm();
             }}
           >
             <Typography variant="button">Get call back</Typography>
