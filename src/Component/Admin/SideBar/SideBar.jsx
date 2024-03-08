@@ -19,15 +19,27 @@ import { useNavigate } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 import ResponsiveAppBar from "./TopBar";
+import { useAuth } from "../../Login/Auth";
 const drawerWidth = 208;
 
 export default function SideBar({ page, children }) {
+  const { currentUser, login, logout, signUp } = useAuth();
+
   const sideBarArr = [
     { text: "Home", icon: <InboxIcon />, aicon: <InboxIcon /> },
 
     { text: "Logout", icon: <LogoutIcon />, aicon: <LogoutIcon /> },
   ];
+
   const navigat = useNavigate();
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigat("/admin/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  };
   return (
     <Box
       sx={{
@@ -88,7 +100,7 @@ export default function SideBar({ page, children }) {
 
                   if (text.text == "Logout") {
                     localStorage.clear();
-                    navigat("/admin/login");
+                    handleLogout();
                   }
                 }}
               >

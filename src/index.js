@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AppThemeProvider from "./utilities/Theme/Theme";
+import { AuthProvider } from "./Component/Login/Auth"; // Import AuthProvider
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AppThemeProvider>
-      <App />
-    </AppThemeProvider>
+    <AuthProvider>
+      <AppThemeProvider>
+        <App />
+      </AppThemeProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
 

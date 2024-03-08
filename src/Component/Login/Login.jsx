@@ -6,15 +6,17 @@ import bgImg from "../../utilities/Icons/home.png";
 import { Box, Button, Typography } from "@mui/material";
 import LoadingScreen from "../Common/LoadingScreen";
 import { auth } from "../../Firebase";
+import { useAuth } from "./Auth";
 
 export default function Login() {
   const [userData, setUserData] = useState({
     email: "",
     password: "",
   });
+  const { currentUser, login, logout, signUp } = useAuth();
 
   const [loading, setloading] = useState(false);
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
   //   const { data, error, loading, postData } = usePOSTApiCalls();
   //   useEffect(() => {
   //     let acToken = getItemInLocalStorage("accessToken");
@@ -32,13 +34,19 @@ export default function Login() {
   //   }, [data]);
 
   const handelLogin = async () => {
-    await auth.signInWithEmailAndPassword(
-      userData.email.trim(),
-      userData.password
-    );
-
-    console.log(data);
+    auth
+      .signInWithEmailAndPassword(userData.email.trim(), userData.password)
+      .then((res) => {
+        console.log(res);
+        navigate("/admin");
+      });
   };
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/admin");
+    }
+  }, []);
 
   return (
     <div

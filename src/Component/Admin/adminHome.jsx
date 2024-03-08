@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 // import viewImg from "../../../utilities/Icons/courseIcons/view.png";
 import DeleteIcon from "@mui/icons-material/Delete";
-
+import CheckIcon from "@mui/icons-material/Check";
 // import deleteImg from "../../../utilities/Icons/courseIcons/delete.png";
 
 import { tableData } from "./homedata";
@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import LoadingScreen from "../Common/LoadingScreen";
 import TableBox from "../Common/TableBox";
 import SideBar from "./SideBar/SideBar";
+import { useAuth } from "../Login/Auth";
+import { db } from "../../Firebase";
 // import useGetApiCalls from "../../../Config/GetApiHook";
 // import LoadingScreen from "../../../Config/LoadingScreen";
 // import deleteDataAPI from "../../../Config/DeleteAPi";
@@ -16,26 +18,18 @@ import SideBar from "./SideBar/SideBar";
 export default function HomeTable() {
   const [dataModified, setData] = useState([]);
   const [loading, setloading] = useState(false);
-  // const { data, error, loading, fetchData } = useGetApiCalls();
+  const { currentUser, login, logout, signUp } = useAuth();
+
   const [deletePopUp, setDeletePopUp] = useState(false);
   const [deleteData, setDeleteData] = useState("");
   const navigate = useNavigate();
+  // console.log("currentUser", currentUser);
   const columns = useMemo(
     () => [
       { Header: "Name", accessor: "name", width: "15%" },
-      { Header: "NDIS no.", accessor: "ndis", width: "12%" },
-      { Header: "Gender", accessor: "gender", width: "10%" },
-      { Header: "Age", accessor: "age", width: "10%" },
-      {
-        Header: "Recent assessment",
-        accessor: "last_visiting_date",
-        width: "20%",
-      },
-      {
-        Header: "Recent report",
-        accessor: "date_of_report",
-        width: "20%",
-      },
+      { Header: "Email", accessor: "email", width: "15%" },
+      { Header: "Phone", accessor: "phone", width: "15%" },
+      { Header: "How we can help", accessor: "howwecanhelp", width: "40" },
 
       // { Header: "State", accessor: "state" },
       // { Header: "City", accessor: "city" },
@@ -46,11 +40,9 @@ export default function HomeTable() {
   );
 
   useEffect(() => {
-    // fetchData({
-    //   url: "customer/customers/list",
-    //   query: { page: 1 },
-    // });
-    // customer/customers/list?page=1
+    if (!currentUser) {
+      navigate("/admin/login");
+    }
   }, []);
   useEffect(() => {
     fetchDataLocal();
@@ -59,10 +51,13 @@ export default function HomeTable() {
 
   const fetchDataLocal = async () => {
     try {
-      const agents = tableData;
+      // const agents = tableData;
+
+      const resData = await db.collection("formData").get();
+
       setData(
-        agents.map((el) => ({
-          ...el,
+        resData.docs.map((el) => ({
+          ...el.data(),
           action: (
             <div
               style={{
@@ -94,7 +89,17 @@ export default function HomeTable() {
                   // alert("delete");
                 }}
               /> */}
-              <DeleteIcon />
+              <CheckIcon
+                color="primary"
+                sx={{
+                  cursor: "pointer",
+                }}
+              />
+              <DeleteIcon
+                sx={{
+                  cursor: "pointer",
+                }}
+              />
             </div>
           ),
         }))
