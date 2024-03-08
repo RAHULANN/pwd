@@ -95,7 +95,7 @@ export default function SideBar({ page, children }) {
                 }}
                 onClick={() => {
                   if (text.text == "Home") {
-                    navigat("/");
+                    navigat("/admin");
                   }
 
                   if (text.text == "Logout") {

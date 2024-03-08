@@ -38,6 +38,7 @@ export default function Login() {
       .signInWithEmailAndPassword(userData.email.trim(), userData.password)
       .then((res) => {
         console.log(res);
+        localStorage.setItem("uid", res.user.uid);
         navigate("/admin");
       });
   };

@@ -160,9 +160,10 @@ export default function TableBox({ columns, data, onclickAction }) {
                 <tr
                   style={{
                     borderCollapse: "collapse",
-                    background: "black",
+                    backgroundColor: "yellow",
+                    border: "1px solid black",
                     padding: "10px",
-                    height: "12px",
+                    height: "1px",
                     marginTop: "12px",
                   }}
                 ></tr>

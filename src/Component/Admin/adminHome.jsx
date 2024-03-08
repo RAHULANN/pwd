@@ -3,7 +3,9 @@ import React, { useEffect, useMemo, useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CheckIcon from "@mui/icons-material/Check";
 // import deleteImg from "../../../utilities/Icons/courseIcons/delete.png";
-
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
+import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
+import ClearIcon from "@mui/icons-material/Clear";
 import { tableData } from "./homedata";
 import { useNavigate } from "react-router-dom";
 import LoadingScreen from "../Common/LoadingScreen";
@@ -11,6 +13,7 @@ import TableBox from "../Common/TableBox";
 import SideBar from "./SideBar/SideBar";
 import { useAuth } from "../Login/Auth";
 import { db } from "../../Firebase";
+import { Box, Button, Typography } from "@mui/material";
 // import useGetApiCalls from "../../../Config/GetApiHook";
 // import LoadingScreen from "../../../Config/LoadingScreen";
 // import deleteDataAPI from "../../../Config/DeleteAPi";
@@ -23,6 +26,9 @@ export default function HomeTable() {
   const [deletePopUp, setDeletePopUp] = useState(false);
   const [deleteData, setDeleteData] = useState("");
   const navigate = useNavigate();
+  const [extraStateForData, setExtraStateForData] = useState([]);
+  const [stateForData, setStateForData] = useState([]);
+  const [filterEmail, setfilterEmail] = useState("");
   // console.log("currentUser", currentUser);
   const columns = useMemo(
     () => [
@@ -40,24 +46,40 @@ export default function HomeTable() {
   );
 
   useEffect(() => {
-    if (!currentUser) {
+    if (!localStorage.getItem("uid")) {
       navigate("/admin/login");
     }
   }, []);
   useEffect(() => {
-    fetchDataLocal();
+    // fetchDataLocal();
     // customer/customers/list?page=1
+    fetchData();
   }, [tableData]);
 
-  const fetchDataLocal = async () => {
+  const fetchData = async () => {
+    setloading(true);
+    const resData = await db.collection("formData").get();
+    setloading(false);
+    let mapmedData = resData.docs.map((el) => ({ ...el.data(), id: el.id }));
+    setExtraStateForData(mapmedData);
+    setStateForData(mapmedData);
+    fetchDataLocal(mapmedData);
+  };
+  const filterByEmail = async () => {
+    setloading(true);
+    let filterd = extraStateForData.filter((el) =>
+      el.email.includes(filterEmail)
+    );
+    setloading(false);
+    fetchDataLocal(filterd);
+  };
+  const fetchDataLocal = async (agents) => {
     try {
-      // const agents = tableData;
-
-      const resData = await db.collection("formData").get();
+      // const agents = stateForData;
 
       setData(
-        resData.docs.map((el) => ({
-          ...el.data(),
+        agents.map((el) => ({
+          ...el,
           action: (
             <div
               style={{
@@ -90,7 +112,13 @@ export default function HomeTable() {
                 }}
               /> */}
               <CheckIcon
-                color="primary"
+                color={el?.markRead ? "primary" : ""}
+                onClick={() => {
+                  if (el?.markRead) {
+                  } else {
+                    markAsSolved(el.id);
+                  }
+                }}
                 sx={{
                   cursor: "pointer",
                 }}
@@ -98,6 +126,9 @@ export default function HomeTable() {
               <DeleteIcon
                 sx={{
                   cursor: "pointer",
+                }}
+                onClick={() => {
+                  deletefunctions(el.id);
                 }}
               />
             </div>
@@ -110,55 +141,36 @@ export default function HomeTable() {
   };
 
   const deletefunctions = async (id) => {
-    // await deleteDataAPI({
-    //   url: "customer",
-    //   data: { customer_id: deleteData },
-    // });
-    // setDeletePopUp(false);
-    // fetchData({
-    //   url: "customer/customers/list",
-    //   query: { page: 1 },
-    // });
+    const resData = await db.collection("formData").doc(id).delete();
+    fetchData();
 
     setDeleteData("");
   };
   const clickAction = (data) => {
-    let orderBy = "customer_id";
-    let order = "DESC";
-    if (data.action) {
-      order = data.action;
+    console.log(data);
+    let temp = [...extraStateForData];
+    if (data) {
+      temp.sort((a, b) => {
+        if (data == "ascending") {
+          return a["date"]?.seconds < b["date"]?.seconds ? 1 : -1;
+        }
+        if (data == "descending") {
+          return b["date"]?.seconds < a["date"]?.seconds ? 1 : -1;
+        }
+      });
     }
-    if (data.column) {
-      orderBy =
-        data.column == "Name"
-          ? "name"
-          : data.column == "NDIS no."
-          ? "ndis"
-          : data.column == "Gender"
-          ? "gender"
-          : data.column == "Age"
-          ? "age"
-          : data.column == "Recent assessment"
-          ? "last_visiting_date"
-          : data.column == "Recent report"
-          ? "date_of_report"
-          : "customer_id";
-    }
-
-    setData([]);
-
-    let temp = [...dataModified];
-
-    temp.sort((a, b) => {
-      if (order == "sortdown") {
-        return a[orderBy] < b[orderBy] ? 1 : -1;
-      }
-      if (order == "sortup") {
-        return b[orderBy] < a[orderBy] ? 1 : -1;
-      }
-    });
     console.log(temp);
-    setData(temp);
+    console.log(temp.map((el) => el?.date?.seconds));
+    if (data) {
+      fetchDataLocal(temp);
+    }
+  };
+
+  const markAsSolved = async (id) => {
+    const resData = await db.collection("formData").doc(id).update({
+      markRead: true,
+    });
+    fetchData();
   };
   return (
     <SideBar>
@@ -172,12 +184,100 @@ export default function HomeTable() {
           deletefunctions();
         }}
       /> */}
+
+      <Box
+        sx={{
+          display: "flex",
+          gap: "20px",
+          mt: "30px",
+        }}
+      >
+        <Box>
+          <input
+            type="text"
+            placeholder="user email"
+            style={{
+              outline: "none",
+              width: "100%",
+              border: "1px solid #D9D9D9",
+              height: "37px",
+              borderRadius: "6px",
+              color: "#1B1D1F",
+              fontWeight: "400",
+              fontSize: "14px",
+              padding: "2px 8px",
+              fontFamily: "Poppins,sans-serif",
+            }}
+            value={filterEmail}
+            onChange={(e) => {
+              setfilterEmail(e.target.value);
+            }}
+          />
+        </Box>
+        <Box>
+          <Button
+            variant="contained"
+            startIcon={<FilterAltIcon />}
+            onClick={filterByEmail}
+          >
+            <Typography variant="button"> Filter</Typography>
+          </Button>
+        </Box>
+
+        <Box>
+          <Button
+            variant="contained"
+            startIcon={<FilterAltOffIcon />}
+            onClick={() => {
+              fetchDataLocal(extraStateForData);
+              setfilterEmail("");
+            }}
+          >
+            <Typography variant="button"> Clear Filter</Typography>
+          </Button>
+        </Box>
+        <Box>
+          <select
+            name=""
+            id=""
+            style={{
+              outline: "none",
+              width: "100%",
+              border: "1px solid #D9D9D9",
+              height: "37px",
+              borderRadius: "6px",
+              color: "#1B1D1F",
+              fontWeight: "400",
+              fontSize: "14px",
+              padding: "2px 8px",
+              fontFamily: "Poppins,sans-serif",
+            }}
+            onChange={(e) => {
+              clickAction(e.target.value);
+            }}
+          >
+            <option value=""> sort by date</option>
+            <option value="ascending"> Ascending</option>
+            <option value="descending"> Descending</option>
+          </select>
+        </Box>
+        <Box>
+          <Button
+            variant="contained"
+            startIcon={<ClearIcon />}
+            onClick={() => {
+              fetchDataLocal(extraStateForData);
+              setfilterEmail("");
+            }}
+          >
+            <Typography variant="button">Clear Sort</Typography>
+          </Button>
+        </Box>
+      </Box>
       <TableBox
         columns={columns}
         data={dataModified}
-        onclickAction={(data) => {
-          clickAction(data);
-        }}
+        onclickAction={(data) => {}}
       />
     </SideBar>
   );

@@ -4,7 +4,10 @@ const handleSubmit = async (formData) => {
     // Add form data to Firestore collection
 
     console.log(formData);
-    await db.collection("formData").add(formData);
+    await db.collection("formData").add({
+      ...formData,
+      date: new Date(),
+    });
     // alert("Form submitted successfully!");
     // Clear form fields after submission
     // setName("");
