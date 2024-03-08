@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-// import {
-//   getItemInLocalStorage,
-//   setItemInLocalStorage,
-// } from "../../../Config/localStorage";
 import { useNavigate } from "react-router-dom";
 import bgImg from "../../utilities/Icons/home.png";
-// import doctorImg from "../../../utilities/Icons/doctor.png";
 
-// import { Logo } from "../../../utilities/Icons/Icons";
 import { Box, Button, Typography } from "@mui/material";
 import LoadingScreen from "../Common/LoadingScreen";
+import { auth } from "../../Firebase";
 
 export default function Login() {
   const [userData, setUserData] = useState({
@@ -36,16 +31,14 @@ export default function Login() {
   //     }
   //   }, [data]);
 
-  //   const handelLogin = async () => {
-  //     await postData({
-  //       data: {
-  //         email: userData.email.trim(),
-  //         password: userData.password,
-  //       },
-  //       url: "auth/signIn",
-  //     });
-  //     console.log(data);
-  //   };
+  const handelLogin = async () => {
+    await auth.signInWithEmailAndPassword(
+      userData.email.trim(),
+      userData.password
+    );
+
+    console.log(data);
+  };
 
   return (
     <div
@@ -173,7 +166,7 @@ export default function Login() {
             <Button
               variant="contained"
               onClick={() => {
-                // handelLogin();
+                handelLogin();
               }}
             >
               Login{" "}
