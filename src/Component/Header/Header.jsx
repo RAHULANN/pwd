@@ -4,6 +4,7 @@ import "./Header.css";
 import { CSSTransition } from "react-transition-group";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Header({ page }) {
   const [isNavVisible, setNavVisibility] = useState(false);
@@ -66,7 +67,7 @@ export default function Header({ page }) {
         </nav>
       </CSSTransition>
       <button onClick={toggleNav} className="Burger">
-        🍔
+        <MenuIcon />
       </button>
     </header>
   );
