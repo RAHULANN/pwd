@@ -1,7 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { useNavigate } from "react-router-dom";
 export default function Abautus() {
+  const navigate = useNavigate();
   return (
     <>
       <Box
@@ -76,6 +78,9 @@ export default function Abautus() {
               display: "flex",
               alignContent: "center",
               cursor: "pointer",
+            }}
+            onClick={() => {
+              navigate("/aboutus");
             }}
           >
             Read more <ArrowRightIcon />

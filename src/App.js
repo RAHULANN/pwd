@@ -14,6 +14,7 @@ import Products from "./Component/Products/Products";
 import FontPage from "./fontPage";
 import Login from "./Component/Login/Login";
 import HomeTable from "./Component/Admin/adminHome";
+import AboutUs from "./Component/AboutUs/AboutUs";
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,8 @@ function App() {
           <Route path="/font" element={<FontPage />} />
 
           <Route path="/Products" element={<Products />} />
+
+          <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
       </Router>
     </div>

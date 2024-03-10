@@ -61,7 +61,7 @@ export default function Home() {
   console.log(currents);
   return (
     <div>
-      <Header />
+      <Header page={"Home"} />
       <ContactUsPopUp
         open={contactUsPopUpState}
         onClose={() => {

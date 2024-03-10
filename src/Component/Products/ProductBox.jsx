@@ -33,7 +33,7 @@ export default function ProductBox({ data, index = 0 }) {
           width: "50%",
         }}
       >
-        <img src={data?.img} height="100%" width="100%" alt="" />
+        <img src={data?.img} height="100%" width="90%" alt="" />
       </Box>
       <Box
         sx={{

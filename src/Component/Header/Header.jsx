@@ -65,7 +65,17 @@ export default function Header({ page }) {
             </a>
           </Link>
 
-          <HashLink to="/#industry">Industries we serve</HashLink>
+          <HashLink to="/#industry">
+            <a
+              style={{
+                color: window.location.href.includes("#industry")
+                  ? "#2A4596"
+                  : "",
+              }}
+            >
+              Industries we serve
+            </a>
+          </HashLink>
 
           {/* <a
             style={{
@@ -74,7 +84,15 @@ export default function Header({ page }) {
           >
           </a> */}
 
-          <a href="/">About us</a>
+          <Link to={"/aboutus"}>
+            <a
+              style={{
+                color: page == "aboutus" ? "#2A4596" : "",
+              }}
+            >
+              About us
+            </a>
+          </Link>
           <button>Contact us</button>
         </nav>
       </CSSTransition>
