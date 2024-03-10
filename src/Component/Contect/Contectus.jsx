@@ -152,11 +152,12 @@ export default function Contectus() {
             style={{
               width: "34vw",
               height: "60px",
-              fontSize: "20px",
+
               paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
+              fontSize: "20px",
               color: "#222224",
             }}
             value={formData.name}

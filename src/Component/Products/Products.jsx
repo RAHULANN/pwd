@@ -63,7 +63,11 @@ export default function Products() {
     };
   }, []);
   return (
-    <div>
+    <div
+      style={{
+        background: "#F7F7FB",
+      }}
+    >
       <Header page={"product"} />
 
       <Box
@@ -72,9 +76,10 @@ export default function Products() {
 
           display: "flex",
 
+          background: "#F7F7FB",
           position: "sticky",
-          top: "80px",
-          mt: "90px",
+          top: "60px",
+          mt: "70px",
           zIndex: 400,
           justifyContent: "center",
         }}
@@ -116,43 +121,53 @@ export default function Products() {
           ))}
         </Sc>
       </Box>
-      {currentState == "prod0" && (
-        <Box
-          sx={{
-            width: "95vw",
-            marginLeft: "auto",
-            marginRight: "auto",
-            mt: "40px",
-          }}
-        >
-          <Typography
+      <Box>
+        {currentState == "prod0" && (
+          <Box
             sx={{
-              color: "#2C2C2E",
-              fontSize: "22px",
-              fontWeight: 400,
+              width: "95vw",
+              marginLeft: "auto",
+              marginRight: "auto",
+              mt: "40px",
+              mb: "30px",
             }}
           >
-            <span
-              style={{
-                color: "#2C2C2E",
+            <Typography
+              sx={{
+                color: "#3D3D3D",
                 fontSize: "22px",
-                fontWeight: 600,
+                textAlign: "center",
+                fontWeight: 400,
               }}
             >
-              Welcome to PDWT Chemicals –
-            </span>
-            your trusted partner for water treatment solutions in industrial
-            systems. Our specialized chemicals ensure trouble-free operation,
-            efficiency, and equipment lifespan extension.
-          </Typography>
-        </Box>
-      )}
+              <span
+                style={{
+                  color: "#2C2C2E",
+                  fontSize: "22px",
+                  fontWeight: 600,
+                }}
+              >
+                Welcome to PDWT Chemicals –
+              </span>
+              your trusted partner for water treatment solutions in industrial
+              systems. Our specialized chemicals ensure trouble-free operation,
+              efficiency, and equipment lifespan extension.
+            </Typography>
+          </Box>
+        )}
 
-      {dataArr?.map((el, index) => (
-        <section id={"prod" + index}>
-          <ProductBox data={el} index={index} />
-        </section>
-      ))}
+        {dataArr?.map((el, index) => (
+          <section
+            id={"prod" + index}
+            // style={{
+            //   padding: "100px",
+            //   marginTop: "140px",
+            // }}
+          >
+            <ProductBox data={el} index={index} />
+          </section>
+        ))}
+      </Box>
 
       <Box>
         <ContectProduct />

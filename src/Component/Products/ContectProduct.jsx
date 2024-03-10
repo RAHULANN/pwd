@@ -8,8 +8,10 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import linkedin from "../../utilities/Icons/aboutus/linkedin.png";
-import whatsapp from "../../utilities/Icons/aboutus/whatsapp.png";
+import Linkedin from "../../utilities/Icons/linkendIn.svg";
+import Whatsapp from "../../utilities/Icons/whatsapp.svg";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+
 import "../Contect/contect.css";
 import LabelIcon from "@mui/icons-material/Label";
 import { handleSubmit } from "../Contect/formFirebase";
@@ -45,12 +47,13 @@ export default function ContectProduct() {
       sx={{
         width: "95vw",
 
-        background: "#F3F2F6",
+        background: "#F7F7FB",
         padding: "50px 20px 50px 20px",
         display: "grid",
         gridTemplateColumns: "50% 40%",
         justifyContent: "center",
         gap: "40px",
+        height: "450px",
         margin: "50px auto 50px auto",
       }}
     >
@@ -66,9 +69,9 @@ export default function ContectProduct() {
             display: "flex",
             alignContent: "start",
             flexDirection: "column",
-            padding: "40px 10px 40px 40px",
-            gap: "30px",
-            mt: "50px",
+            padding: "20px 10px 40px 40px",
+            gap: "20px",
+            mt: "10px",
           }}
         >
           <Typography variant="subtitle2">
@@ -82,19 +85,24 @@ export default function ContectProduct() {
             }}
           >
             {data?.map((el) => (
-              <ListItem sx={{ marginLeft: "0px" }}>
+              <ListItem sx={{ margin: "0px", padding: "0px" }}>
                 <ListItemIcon
                   sx={{
                     minWidth: "55px",
                   }}
                 >
-                  <LabelIcon />
+                  <FiberManualRecordIcon
+                    sx={{
+                      fontSize: "12px",
+                    }}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primaryTypographyProps={{
                     color: "#222224",
                     fontSize: "16px",
                     fontWeight: 500,
+                    marginLeft: "-30px",
                     fontFamily: "SF Pro Display",
                     letterSpacing: "1.5%",
                   }}
@@ -109,19 +117,20 @@ export default function ContectProduct() {
             display: "flex",
             alignContent: "start",
             flexDirection: "row",
-            padding: "40px",
+            padding: "20px",
             gap: "30px",
             // height: "30px",
-            mt: "30px",
+            // mt: "30px",
           }}
         >
-          <img src={linkedin} height="100%" alt="linked in" />
-          <img src={whatsapp} height="100%" alt="whatsapp" />
+          <img src={Linkedin} height="100%" alt="linked in" />
+          <img src={Whatsapp} height="100%" alt="whatsapp" />
         </Box>
       </Box>
       <Box
         sx={{
           background: "#FFF",
+          height: "450px",
           border: "1px rgba(0, 0, 0, 0.3)",
           borderRadius: "10px",
           display: "flex",
@@ -141,13 +150,14 @@ export default function ContectProduct() {
           <input
             style={{
               width: "34vw",
-              height: "60px",
+              height: "40px",
               marginTop: "50px",
               paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              color: "#AEAEB2",
+              fontSize: "20px",
+              color: "#222224",
             }}
             value={formData.name}
             onChange={(e) => {
@@ -161,12 +171,13 @@ export default function ContectProduct() {
           <input
             style={{
               width: "34vw",
-              height: "60px",
+              height: "40px",
               paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              color: "#AEAEB2",
+              fontSize: "20px",
+              color: "#222224",
             }}
             value={formData.email}
             onChange={(e) => {
@@ -180,13 +191,14 @@ export default function ContectProduct() {
           <input
             style={{
               width: "34vw",
-              height: "60px",
+              height: "40px",
 
               paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              color: "#AEAEB2",
+              fontSize: "20px",
+              color: "#222224",
             }}
             value={formData.phone}
             onChange={(e) => {
@@ -201,13 +213,14 @@ export default function ContectProduct() {
           <textarea
             style={{
               width: "34vw",
-              height: "100px",
+              height: "60px",
 
               paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              color: "#AEAEB2",
+              fontSize: "20px",
+              color: "#222224",
             }}
             value={formData.howwecanhelp}
             onChange={(e) => {
