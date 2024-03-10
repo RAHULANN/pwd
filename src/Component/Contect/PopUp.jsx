@@ -6,8 +6,8 @@ import Dialog from "@mui/material/Dialog";
 
 import { Box, Button, Typography } from "@mui/material";
 
-import linkedin from "../../utilities/Icons/aboutus/linkedin.png";
-import whatsapp from "../../utilities/Icons/aboutus/whatsapp.png";
+import Linkedin from "../../utilities/Icons/linkendIn.svg";
+import Whatsapp from "../../utilities/Icons/whatsapp.svg";
 import { Navigate, useNavigate } from "react-router";
 import { handleSubmit } from "./formFirebase";
 
@@ -38,7 +38,7 @@ const ContactUsPopUp = (props) => {
   };
   return (
     <Dialog
-      maxWidth="90vw"
+      maxWidth="80vw"
       fullWidth={true}
       sx={{
         height: "700px",
@@ -62,8 +62,11 @@ const ContactUsPopUp = (props) => {
         sx={{
           display: "flex",
           height: "10px",
+          padding: "10px",
           flexDirection: "row",
           alignItems: "center",
+          background: "#F3F2F6",
+
           textAlign: "left",
           color: "#11047A",
         }}
@@ -76,6 +79,7 @@ const ContactUsPopUp = (props) => {
           style={{
             width: "40px",
             height: "40px",
+            marginRight: "3.5%",
             background: "#f4f7fe",
             marginLeft: "auto",
             borderRadius: "5px",
@@ -99,19 +103,21 @@ const ContactUsPopUp = (props) => {
       </DialogTitle>
       <Box
         sx={{
-          padding: "5px 24px",
+          background: "#F3F2F6",
+
+          // padding: "5px 24px",
         }}
       >
         <Box
-          //   className="contact"
+          // className="contact"
           sx={{
             width: "90vw",
             background: "#F3F2F6",
-            padding: "50px 20px 50px 20px",
+            padding: "10px 20px 50px 20px",
             display: "grid",
             gridTemplateColumns: "50% 40%",
             justifyContent: "center",
-            gap: "40px",
+            gap: "30px",
           }}
         >
           <Box
@@ -126,28 +132,19 @@ const ContactUsPopUp = (props) => {
                 display: "flex",
                 alignContent: "start",
                 flexDirection: "column",
-                padding: "40px",
+                padding: "20px",
                 gap: "30px",
                 mt: "50px",
+                fontFamily: "Sf pro Display",
               }}
             >
-              <Typography
-                variant="callout"
-                sx={{
-                  color: "#3A3A3C",
-                }}
-              >
+              <Typography variant="body3">
                 {" "}
                 Join countless satisfied clients who trust PDWT Chemicals for
                 industry-leading water treatment solutions.
               </Typography>
 
-              <Typography
-                variant="callout"
-                sx={{
-                  color: "#3A3A3C",
-                }}
-              >
+              <Typography variant="body3">
                 {" "}
                 Let us elevate your operations to new heights.
               </Typography>
@@ -173,8 +170,7 @@ const ContactUsPopUp = (props) => {
                   <Typography
                     variant="callout"
                     sx={{
-                      color: "#2C2C2E",
-                      fontWeight: "600",
+                      color: "#222224",
                     }}
                   >
                     enquiry@pdwtchemicals.com
@@ -195,8 +191,7 @@ const ContactUsPopUp = (props) => {
                   <Typography
                     variant="callout"
                     sx={{
-                      color: "#2C2C2E",
-                      fontWeight: "600",
+                      color: "#222224",
                     }}
                   >
                     9619360212
@@ -215,8 +210,11 @@ const ContactUsPopUp = (props) => {
                 mt: "50px",
               }}
             >
-              <img src={linkedin} height="100%" alt="linked in" />
-              <img src={whatsapp} height="100%" alt="whatsapp" />
+              <img src={Linkedin} alt="" />
+              <img src={Whatsapp} alt="" />
+
+              {/* <Linkedin /> */}
+              {/* <Whatsapp /> */}
             </Box>
           </Box>
           <Box
@@ -227,6 +225,7 @@ const ContactUsPopUp = (props) => {
               display: "grid",
               width: "100%",
               gridTemplateColumns: "1fr",
+              fontFamily: "Sf pro Display",
 
               alignContent: "center",
               alignItems: "center",
@@ -242,19 +241,19 @@ const ContactUsPopUp = (props) => {
                 style={{
                   width: "34vw",
                   height: "60px",
-
+                  fontSize: "20px",
                   paddingLeft: "20px",
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
                   outline: "none",
-                  color: "#AEAEB2",
+                  color: "#222224",
                 }}
                 value={formData.name}
                 onChange={(e) => {
                   setFormData((prev) => ({ ...prev, name: e.target.value }));
                 }}
                 required={true}
-                placeholder={"name *"}
+                placeholder={"Name *"}
               />
             </Box>
             <Box>
@@ -266,14 +265,16 @@ const ContactUsPopUp = (props) => {
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
                   outline: "none",
-                  color: "#AEAEB2",
+                  fontSize: "20px",
+                  color: "#222224",
                 }}
+                type="email"
+                placeholder={"E-Mail ID *"}
                 value={formData.email}
                 onChange={(e) => {
                   setFormData((prev) => ({ ...prev, email: e.target.value }));
                 }}
                 required={true}
-                placeholder={"E-Mail ID *"}
               />
             </Box>
             <Box>
@@ -286,12 +287,14 @@ const ContactUsPopUp = (props) => {
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
                   outline: "none",
-                  color: "#AEAEB2",
+                  fontSize: "20px",
+                  color: "#222224",
                 }}
                 value={formData.phone}
                 onChange={(e) => {
                   setFormData((prev) => ({ ...prev, phone: e.target.value }));
                 }}
+                type="number"
                 required={true}
                 placeholder={"Phone number *"}
               />
@@ -307,7 +310,8 @@ const ContactUsPopUp = (props) => {
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
                   outline: "none",
-                  color: "#AEAEB2",
+                  fontSize: "20px",
+                  color: "#222224",
                 }}
                 placeholder={"How can we help you "}
                 value={formData.howwecanhelp}
@@ -317,6 +321,7 @@ const ContactUsPopUp = (props) => {
                     howwecanhelp: e.target.value,
                   }));
                 }}
+                required={true}
               />
             </Box>
 
@@ -328,7 +333,7 @@ const ContactUsPopUp = (props) => {
 
                   //   paddingLeft: "20px",
                   //   border: "1px solid rgba(0, 0, 0, 0.3)",
-                  borderRadius: "20px",
+                  borderRadius: "12px",
                   outline: "none",
                   color: "#FFF",
                   background: "#2C407C",
@@ -341,7 +346,7 @@ const ContactUsPopUp = (props) => {
                   saveForm();
                 }}
               >
-                <Typography variant="button">Get call back</Typography>
+                <Typography variant="button1">Get call back</Typography>
               </Button>
             </Box>
           </Box>

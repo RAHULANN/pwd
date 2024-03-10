@@ -55,6 +55,7 @@ export default function Industry() {
         // justifyContent: "center",
         margin: "auto",
         padding: "40px",
+        mt: "40px",
       }}
     >
       <Typography variant="h5"> Industries we serve</Typography>
@@ -63,8 +64,8 @@ export default function Industry() {
         sx={{
           display: "grid",
           gridTemplateColumns: "repeat(5,1fr)",
-          mt: "40px",
-          gap: "70px",
+          mt: "50px",
+          gap: "80px",
         }}
       >
         {data?.map((el) => (
@@ -74,6 +75,7 @@ export default function Industry() {
               flexDirection: "column",
               gap: "10px",
               height: "97px",
+              fontFamily: "Sf pro Display",
             }}
           >
             <Box

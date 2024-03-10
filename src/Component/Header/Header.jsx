@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import MenuIcon from "@mui/icons-material/Menu";
 
+import logo from "../../utilities/Icons/logo.svg";
 export default function Header({ page }) {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -34,7 +35,8 @@ export default function Header({ page }) {
 
   return (
     <header className="Header">
-      <img src={require("./logo.png")} className="Logo" alt="logo" />
+      <img src={logo} className="Logo" alt="logo" />
+
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
         timeout={350}
@@ -42,6 +44,16 @@ export default function Header({ page }) {
         unmountOnExit
       >
         <nav className="Nav">
+          <Link to={"/"}>
+            {" "}
+            <a
+              style={{
+                color: page == "Home" ? "#2A4596" : "",
+              }}
+            >
+              Home
+            </a>
+          </Link>
           <Link to={"/Products"}>
             {" "}
             <a
@@ -63,7 +75,7 @@ export default function Header({ page }) {
           </a> */}
 
           <a href="/">About us</a>
-          <button>CONTACT US</button>
+          <button>Contact us</button>
         </nav>
       </CSSTransition>
       <button onClick={toggleNav} className="Burger">

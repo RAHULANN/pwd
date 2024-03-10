@@ -1,13 +1,14 @@
 
     .mainboxkey{
-        width: 97vw;
+        width: 95vw;
         height: 600px;
         /* border: 1px solid red; */
         /* border: 1px solid red; */
         display: grid;
         grid-template-columns: 2fr 2fr 2fr;
         /* overflow: scroll; */
-       margin: auto;
+        margin: 20px 40px 20px 40px;
+       /* margin: auto; */
        padding-left: 3vw;
         margin-top: 20px;
         grid-gap: 10px;
@@ -43,7 +44,7 @@
     .center{
         overflow: visible;
         /* position: fixed; */
-        width: 33vw;
+        width: 32vw;
         height: 290px;
         margin-left: -3vw;
         margin-top: 130px;
@@ -61,7 +62,7 @@
         display: grid;
     grid-template-columns: 1fr;
         grid-gap: 200px;
-        width: 31vw;
+        width: 30vw;
       
         
          
@@ -86,7 +87,7 @@
   padding-left: 20px;
   padding-right: 20px;
 
-  width: 31vw;
+  width: 30vw;
   animation-iteration-count: 1;
   /* animation-delay: 4s; */
   
@@ -129,7 +130,7 @@
       align-items: center;
         animation-name: examplep;
   animation-duration: 4s;
-  width: 31vw;
+  width: 30vw;
   height: 160px;
   /* animation-delay: 4s; */
 
@@ -144,7 +145,7 @@
    
 50%   {margin-top: -50vh;
    margin-left: 400px;
-   width: 32vw;
+   width: 30vw;
 visibility: hidden}
   100%   {margin-top: 0px; width: 32vw;}
 
@@ -154,7 +155,7 @@ visibility: hidden}
         display: grid;
     grid-template-columns: 1fr;
         grid-gap: 200px;
-        width: 31vw;
+        width: 30vw;
 
 
     }
@@ -172,7 +173,7 @@ visibility: hidden}
         animation-name: examplepf;
   animation-duration: 4s;
   height: 160px;
-  width: 31vw;
+  width: 30vw;
 
   /* animation-delay: 4s; */
 
@@ -202,7 +203,7 @@ visibility: hidden}
   animation-duration: 4s;
   height: 160px;
 
-  width: 31vw;
+  width: 30vw;
 
   /* animation-delay: 4s; */
 

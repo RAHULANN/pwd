@@ -2,8 +2,11 @@ import React from "react";
 import product6 from "../../utilities/Icons/product6.png";
 import product7 from "../../utilities/Icons/product7.png";
 import { Box, Button, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function HomeProduct67() {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -64,18 +67,31 @@ export default function HomeProduct67() {
             </span>
           </Typography>
           <Button
+            onClick={() => {
+              navigate("/Products");
+            }}
             sx={{
-              background: "#FFFFFF",
+              // background: "#F2f2f7",
               mt: "10px",
-              color: "#3A3A3C",
-              ":hover": {
-                background: (theme) => theme.palette.primary.button,
-                color: "#FFFFFF",
-              },
+
+              // color: "#3A3A3C",
             }}
           >
             {" "}
-            <Typography> Read more</Typography>
+            <Typography
+              variant="button2"
+              sx={{
+                // padding: "5px 20px 5px 20px",
+                ":hover": {
+                  // background: "#F2f2f7",
+
+                  color: "#2A4596",
+                },
+              }}
+            >
+              {" "}
+              Read more
+            </Typography>
           </Button>
         </Box>
         <Box
@@ -143,14 +159,31 @@ export default function HomeProduct67() {
             and cleaners.
           </Typography>
           <Button
+            onClick={() => {
+              navigate("/Products");
+            }}
             sx={{
-              background: "#FFFFFF",
+              // background: "#F2f2f7",
               mt: "10px",
-              color: "#3A3A3C",
+
+              // color: "#3A3A3C",
             }}
           >
             {" "}
-            <Typography variant="body1"> Read more</Typography>
+            <Typography
+              variant="button2"
+              sx={{
+                // padding: "5px 20px 5px 20px",
+                ":hover": {
+                  // background: "#F2f2f7",
+
+                  color: "#2A4596",
+                },
+              }}
+            >
+              {" "}
+              Read more
+            </Typography>
           </Button>
         </Box>
         <Box

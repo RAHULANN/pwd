@@ -1,9 +1,12 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { useState } from "react";
-import linkedin from "../../utilities/Icons/aboutus/linkedin.png";
-import whatsapp from "../../utilities/Icons/aboutus/whatsapp.png";
+
 import "./contect.css";
 import { handleSubmit } from "./formFirebase";
+// import { Linkedin, Whatsapp } from "../../utilities/Icons/Icons";
+import Linkedin from "../../utilities/Icons/linkendIn.svg";
+import Whatsapp from "../../utilities/Icons/whatsapp.svg";
+
 export default function Contectus() {
   const init = {
     name: "",
@@ -44,6 +47,7 @@ export default function Contectus() {
             padding: "40px",
             gap: "30px",
             mt: "50px",
+            fontFamily: "Sf pro Display",
           }}
         >
           <Typography variant="body3">
@@ -118,8 +122,11 @@ export default function Contectus() {
             mt: "50px",
           }}
         >
-          <img src={linkedin} height="100%" alt="linked in" />
-          <img src={whatsapp} height="100%" alt="whatsapp" />
+          <img src={Linkedin} alt="" />
+          <img src={Whatsapp} alt="" />
+
+          {/* <Linkedin /> */}
+          {/* <Whatsapp /> */}
         </Box>
       </Box>
       <Box
@@ -130,6 +137,7 @@ export default function Contectus() {
           display: "grid",
           width: "100%",
           gridTemplateColumns: "1fr",
+          fontFamily: "Sf pro Display",
 
           alignContent: "center",
           alignItems: "center",
@@ -144,19 +152,19 @@ export default function Contectus() {
             style={{
               width: "34vw",
               height: "60px",
-
+              fontSize: "20px",
               paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              color: "#AEAEB2",
+              color: "#222224",
             }}
             value={formData.name}
             onChange={(e) => {
               setFormData((prev) => ({ ...prev, name: e.target.value }));
             }}
             required={true}
-            placeholder={"name *"}
+            placeholder={"Name *"}
           />
         </Box>
         <Box>
@@ -168,7 +176,8 @@ export default function Contectus() {
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              color: "#AEAEB2",
+              fontSize: "20px",
+              color: "#222224",
             }}
             placeholder={"E-Mail ID *"}
             value={formData.email}
@@ -188,7 +197,8 @@ export default function Contectus() {
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              color: "#AEAEB2",
+              fontSize: "20px",
+              color: "#222224",
             }}
             value={formData.phone}
             onChange={(e) => {
@@ -209,7 +219,8 @@ export default function Contectus() {
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              color: "#AEAEB2",
+              fontSize: "20px",
+              color: "#222224",
             }}
             placeholder={"How can we help you "}
             value={formData.howwecanhelp}
@@ -231,7 +242,7 @@ export default function Contectus() {
 
               //   paddingLeft: "20px",
               //   border: "1px solid rgba(0, 0, 0, 0.3)",
-              borderRadius: "20px",
+              borderRadius: "12px",
               outline: "none",
               color: "#FFF",
               background: "#2C407C",
@@ -244,7 +255,7 @@ export default function Contectus() {
               saveForm();
             }}
           >
-            <Typography variant="button">Get call back</Typography>
+            <Typography variant="button1">Get call back</Typography>
           </Button>
         </Box>
       </Box>

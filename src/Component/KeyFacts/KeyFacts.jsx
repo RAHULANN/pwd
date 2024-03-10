@@ -14,10 +14,10 @@ export default function KeyFacts() {
       <Box
         sx={{
           width: "95vw",
-          padding: "50px",
+          padding: "60px",
         }}
       >
-        <Typography variant="h3">Key Facts</Typography>
+        <Typography variant="h5">Key Facts</Typography>
       </Box>
       <div className="mainboxkey">
         <div className="left">

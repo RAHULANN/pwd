@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../Header/Header";
 import Industry from "../Industry/Industry";
 // import KeyFacts from "../KeyFacts/KeyFacts";
-import yearImg from "../../utilities/Icons/year.png";
+
 import homeImg from "../../utilities/Icons/home.png";
 import product1 from "../../utilities/Icons/product1.png";
 import { Box, Button, Typography } from "@mui/material";
@@ -13,10 +13,14 @@ import HomeProduct67 from "./HomeProduct67";
 import KeyFacts from "../KeyFacts/KeyFacts";
 import Contectus from "../Contect/Contectus";
 import ContactUsPopUp from "../Contect/PopUp";
+import { Years } from "../../utilities/Icons/Icons";
+import { useNavigate } from "react-router-dom";
+import Abautus from "./Abautus";
 export default function Home() {
   const [currents, setCurrents] = useState({
     home: "home",
   });
+  const navigate = useNavigate();
 
   const [contactUsPopUpState, setContactUsPopUpState] = useState(false);
   useEffect(() => {
@@ -98,17 +102,7 @@ export default function Home() {
                     gap: "0px",
                   }}
                 >
-                  <img src={yearImg} height="40px" alt="" />
-                  <Typography
-                    sx={{
-                      fontSize: "16px",
-                      fontWeight: "700",
-                      color: "#4493E9",
-                    }}
-                  >
-                    {" "}
-                    Year
-                  </Typography>
+                  <Years />
                 </Box>
               </Box>
               <Box
@@ -144,7 +138,7 @@ export default function Home() {
                   variant="contained"
                   sx={{
                     background: (theme) => theme.palette.primary.button,
-
+                    padding: "5px 40px 5px 40px",
                     color: "#FFFFFF",
                   }}
                   onClick={() => {
@@ -184,7 +178,17 @@ export default function Home() {
               display: "flex",
             }}
           >
-            <Typography variant="h5"> Our Products</Typography>
+            <Typography
+              variant="h5"
+              sx={{
+                mt: "60px",
+                ml: "50px",
+                mb: "20px",
+              }}
+            >
+              {" "}
+              Our Products
+            </Typography>
           </Box>
 
           <section
@@ -207,6 +211,8 @@ export default function Home() {
                   alignContent: "center",
                   justifyItems: "center",
                   margin: "auto",
+                  overflow: "hidden",
+
                   background: "#FFFFFF",
                   borderRadius: "24px",
                   // border: "1px solid red",
@@ -214,7 +220,10 @@ export default function Home() {
               >
                 <Box
                   sx={{
-                    ml: "30px",
+                    ml: "70px",
+                    mr: "-50px",
+                    width: "100%",
+                    // border: "1px solid red",
                   }}
                 >
                   <Typography variant="subtitle1">
@@ -234,7 +243,11 @@ export default function Home() {
                       scale inhibitors ensure peak efficiency ,
                     </span>{" "}
                     dispersing challenges and elevating your system to new
-                    heights. Experience seamless operations with
+                    heights.
+                  </Typography>
+                  <br />
+                  <Typography variant="body1">
+                    Experience seamless operations with
                     <span
                       style={{
                         color: "#2C2C2E",
@@ -246,19 +259,45 @@ export default function Home() {
                   </Typography>
                   <Box>
                     <Button
+                      onClick={() => {
+                        navigate("/Products");
+                      }}
                       sx={{
-                        background: "#FFFFFF",
+                        background: "#F2f2f7",
                         mt: "10px",
-                        color: "#3A3A3C",
+
+                        // color: "#3A3A3C",
                       }}
                     >
                       {" "}
-                      <Typography variant="body1"> Read more</Typography>
+                      <Typography
+                        variant="button2"
+                        sx={{
+                          padding: "5px 20px 5px 20px",
+                          ":hover": {
+                            background: "#F2f2f7",
+
+                            color: "#2A4596",
+                          },
+                        }}
+                      >
+                        {" "}
+                        Read more
+                      </Typography>
                     </Button>
                   </Box>
                 </Box>
-                <Box>
-                  <img src={product1} alt="" />
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: "500px",
+                    ml: "-70px",
+                    // overflow: "hidden",
+                    // border: "1px solid red",
+                    // backgroundImage: `url(${product1})`,
+                  }}
+                >
+                  <img src={product1} alt="" height="100%" />
                 </Box>
               </Box>
             )}
@@ -303,6 +342,9 @@ export default function Home() {
           }}
         >
           {currents?.keyfacts && <KeyFacts />}
+        </section>
+        <section>
+          <Abautus />
         </section>
 
         <section

@@ -2,8 +2,10 @@ import React from "react";
 import product4 from "../../utilities/Icons/product4.png";
 import product5 from "../../utilities/Icons/product5.png";
 import { Box, Button, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function HomeProduct45() {
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -41,12 +43,22 @@ export default function HomeProduct45() {
             padding: "30px",
           }}
         >
-          <Typography variant="subtitle1">
+          <Typography
+            variant="subtitle1"
+            sx={{
+              lineHeight: "35px",
+            }}
+          >
             {" "}
             Offline / online Descaling Chemicals
           </Typography>
 
-          <Typography variant="body1">
+          <Typography
+            variant="body1"
+            sx={{
+              mt: "10px",
+            }}
+          >
             {" "}
             Tailored to{" "}
             <span
@@ -69,18 +81,31 @@ export default function HomeProduct45() {
             with our targeted solutions.
           </Typography>
           <Button
+            onClick={() => {
+              navigate("/Products");
+            }}
             sx={{
-              background: "#FFFFFF",
+              // background: "#F2f2f7",
               mt: "10px",
-              color: "#3A3A3C",
-              ":hover": {
-                background: (theme) => theme.palette.primary.button,
-                color: "#FFFFFF",
-              },
+
+              // color: "#3A3A3C",
             }}
           >
             {" "}
-            <Typography> Read more</Typography>
+            <Typography
+              variant="button2"
+              sx={{
+                // padding: "5px 20px 5px 20px",
+                ":hover": {
+                  // background: "#F2f2f7",
+
+                  color: "#2A4596",
+                },
+              }}
+            >
+              {" "}
+              Read more
+            </Typography>
           </Button>
         </Box>
         <Box
@@ -144,14 +169,31 @@ export default function HomeProduct45() {
             </span>
           </Typography>
           <Button
+            onClick={() => {
+              navigate("/Products");
+            }}
             sx={{
-              background: "#FFFFFF",
+              // background: "#F2f2f7",
               mt: "10px",
-              color: "#3A3A3C",
+
+              // color: "#3A3A3C",
             }}
           >
             {" "}
-            <Typography variant="body1"> Read more</Typography>
+            <Typography
+              variant="button2"
+              sx={{
+                // padding: "5px 20px 5px 20px",
+                ":hover": {
+                  // background: "#F2f2f7",
+
+                  color: "#2A4596",
+                },
+              }}
+            >
+              {" "}
+              Read more
+            </Typography>
           </Button>
         </Box>
         <Box

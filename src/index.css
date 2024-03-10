@@ -8,6 +8,31 @@ body {
   background-color: #FFFFFF;
 }
 
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/src/sf-pro-display-cufonfonts/SFPRODISPLAYMEDIUM.OTF');
+  font-weight: 500; /* Black weight is typically 900 */
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/src/sf-pro-display-cufonfonts/FontsFree-Net-SFProDisplay-Semibold.ttf') format("truetype");
+  font-weight: 500; /* Black weight is typically 900 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/src/sf-pro-display-cufonfonts/SFPRODISPLAYREGULAR.OTF');
+  font-weight: 400; /* Black weight is typically 900 */
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/src/sf-pro-display-cufonfonts/SFPRODISPLAYBOLD.OTF');
+  font-weight: 900; /* Black weight is typically 900 */
+  font-style: normal;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
