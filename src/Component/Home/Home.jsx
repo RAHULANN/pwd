@@ -245,7 +245,7 @@ export default function Home() {
                     dispersing challenges and elevating your system to new
                     heights.
                   </Typography>
-                  <br />
+
                   <Typography variant="body1">
                     Experience seamless operations with
                     <span
