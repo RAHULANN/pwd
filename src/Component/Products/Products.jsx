@@ -8,6 +8,13 @@ import Menu from "./sc";
 import Sc from "./sc";
 import { HashLink } from "react-router-hash-link";
 import ContectProduct from "./ContectProduct";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+} from "react-scroll";
 
 export default function Products() {
   const [currentState, setCurrentState] = useState("prod0");
@@ -62,6 +69,14 @@ export default function Products() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const scrollTo = () => {
+    scroll.scrollTo(100); // Scrolling to 100px from the top of the page.
+  };
+
+  const scrollMore = () => {
+    scroll.scrollMore(100); // Scrolling an additional 100px from the current scroll position.
+  };
   return (
     <div
       style={{
@@ -92,7 +107,14 @@ export default function Products() {
               }}
             >
               {" "}
-              <HashLink to={`/Products#prod${index}`}>
+              {/* <Link
+                to={`prod${index}`}
+                marginHeight={100}
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
                 <Button
                   sx={{
                     background: currentState == "prod" + index ? "#2A4596" : "",
@@ -116,56 +138,89 @@ export default function Products() {
                   {" "}
                   <Typography variant="button"> {el}</Typography>
                 </Button>{" "}
+              </Link> */}
+              <HashLink to={`/Products#prod${index}`}>
+                <Button
+                  sx={{
+                    background: currentState == "prod" + index ? "#2A4596" : "",
+                    scrollBehavior: "smooth",
+                    color:
+                      currentState == "prod" + index ? "#FFFFFF" : "#636366",
+                    ":hover": {
+                      background: "",
+                    },
+                  }}
+                  onClick={() => {
+                    console.log(el);
+
+                    setCurrentState((prev) => {
+                      setPrevState(prev.split("prod")[1]);
+                      return "prod" + index;
+                    });
+                  }}
+                >
+                  {" "}
+                  <Typography variant="button"> {el}</Typography>
+                </Button>{" "}
               </HashLink>
             </Box>
           ))}
         </Sc>
       </Box>
       <Box>
-        {currentState == "prod0" && (
-          <Box
-            sx={{
-              width: "95vw",
-              marginLeft: "auto",
-              marginRight: "auto",
-              mt: "40px",
-              mb: "30px",
-            }}
-          >
-            <Typography
-              sx={{
-                color: "#3D3D3D",
-                fontSize: "22px",
-                textAlign: "center",
-                fontWeight: 400,
-              }}
-            >
-              <span
-                style={{
-                  color: "#2C2C2E",
-                  fontSize: "22px",
-                  fontWeight: 600,
-                }}
-              >
-                Welcome to PDWT Chemicals –
-              </span>
-              your trusted partner for water treatment solutions in industrial
-              systems. Our specialized chemicals ensure trouble-free operation,
-              efficiency, and equipment lifespan extension.
-            </Typography>
-          </Box>
-        )}
-
-        {dataArr?.map((el, index) => (
-          <section
-            id={"prod" + index}
-            // style={{
-            //   padding: "100px",
-            //   marginTop: "140px",
-            // }}
-          >
+        {/* {dataArr?.map((el, index) => (
+          <section id={"prod" + index}>
             <ProductBox data={el} index={index} />
           </section>
+        ))} */}
+        {dataArr?.map((el, index) => (
+          <Element name={"prod" + index}>
+            <section
+              id={"prod" + index}
+              style={{
+                height: "65vh",
+                paddingTop: "100px",
+                scrollBehavior: "smooth",
+                marginBottom: "-30px",
+              }}
+            >
+              {currentState == "prod0" && (
+                <Box
+                  sx={{
+                    width: "95vw",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    mt: "40px",
+                    mb: "30px",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: "#3D3D3D",
+                      fontSize: "22px",
+                      textAlign: "center",
+                      fontWeight: 400,
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: "#2C2C2E",
+                        fontSize: "22px",
+                        fontWeight: 600,
+                      }}
+                    >
+                      Welcome to PDWT Chemicals –
+                    </span>
+                    your trusted partner for water treatment solutions in
+                    industrial systems. Our specialized chemicals ensure
+                    trouble-free operation, efficiency, and equipment lifespan
+                    extension.
+                  </Typography>
+                </Box>
+              )}
+              <ProductBox data={el} index={index} />
+            </section>
+          </Element>
         ))}
       </Box>
 
