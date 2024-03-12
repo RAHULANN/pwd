@@ -41,15 +41,20 @@ export default function Products() {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         // console.log(sectionHeight, sectionTop, window.pageYOffset);
-        if (window.pageYOffset >= sectionTop - sectionHeight) {
+        if (window.pageYOffset >= sectionTop - sectionHeight + 100) {
           current = section.getAttribute("id");
         }
       });
       if (current) {
         setCurrentState((prev) => {
           setPrevState(prev.split("prod")[1]);
+          // let ele = document.getElementById(prev);
+          // ele.scrollIntoView({
+          //   behavior: "smooth",
+          // });
           return current;
         });
+
         console.log(current);
         // setCurrents((prev) => ({ ...prev, [current]: current }));
       }
@@ -187,7 +192,7 @@ export default function Products() {
               {currentState == "prod0" && (
                 <Box
                   sx={{
-                    width: "95vw",
+                    width: "90vw",
                     marginLeft: "auto",
                     marginRight: "auto",
                     mt: "40px",
