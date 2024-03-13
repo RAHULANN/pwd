@@ -6,8 +6,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #FFFFFF;
+ 
 }
-
+.css-15dckc6-MuiTypography-root{
+  letter-spacing: 0px;
+}
 @font-face {
   font-family: 'SF Pro Display';
   src: url('/src/sf-pro-display-cufonfonts/SFPRODISPLAYMEDIUM.OTF');

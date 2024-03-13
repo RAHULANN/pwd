@@ -7,6 +7,7 @@ import { HashLink } from "react-router-hash-link";
 import MenuIcon from "@mui/icons-material/Menu";
 
 import logo from "../../utilities/Icons/logo.svg";
+import DisabledPortalPopup from "./Conectus";
 export default function Header({ page }) {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -93,7 +94,8 @@ export default function Header({ page }) {
               About us
             </a>
           </Link>
-          <button>Contact us</button>
+          {/* <button>Contact us</button> */}
+          <DisabledPortalPopup />
         </nav>
       </CSSTransition>
       <button onClick={toggleNav} className="Burger">

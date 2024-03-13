@@ -16,6 +16,7 @@ import ContactUsPopUp from "../Contect/PopUp";
 import { Years } from "../../utilities/Icons/Icons";
 import { useNavigate } from "react-router-dom";
 import Abautus from "./Abautus";
+import Footer from "../Footer/Footer";
 export default function Home() {
   const [currents, setCurrents] = useState({
     home: "home",
@@ -356,6 +357,7 @@ export default function Home() {
           {currents?.contectus && <Contectus />}
         </section>
       </div>
+      <Footer />
     </div>
   );
 }

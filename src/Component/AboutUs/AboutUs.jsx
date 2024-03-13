@@ -8,6 +8,7 @@ import {
   Three,
 } from "../../utilities/Icons/aboutus/Icons";
 import ManImg from "../../utilities/Icons/aboutus/Man.png";
+import Footer from "../Footer/Footer";
 export default function AboutUs() {
   return (
     <div
@@ -45,6 +46,7 @@ export default function AboutUs() {
             alignContent: "center",
             display: "flex",
             flexDirection: "column",
+            letterSpacing: "0",
             gap: "30px",
           }}
         >
@@ -287,6 +289,7 @@ export default function AboutUs() {
           </Typography>
         </Box>
       </Box>
+      <Footer />
     </div>
   );
 }

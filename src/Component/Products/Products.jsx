@@ -15,6 +15,7 @@ import {
   animateScroll as scroll,
   scrollSpy,
 } from "react-scroll";
+import Footer from "../Footer/Footer";
 
 export default function Products() {
   const [currentState, setCurrentState] = useState("prod0");
@@ -232,6 +233,7 @@ export default function Products() {
       <Box>
         <ContectProduct />
       </Box>
+      <Footer />
     </div>
   );
 }
