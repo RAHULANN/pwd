@@ -164,7 +164,7 @@ export default function ContectProduct() {
               setFormData((prev) => ({ ...prev, name: e.target.value }));
             }}
             required={true}
-            placeholder={"name *"}
+            placeholder={"Name *"}
           />
         </Box>
         <Box>
@@ -214,6 +214,7 @@ export default function ContectProduct() {
             style={{
               width: "34vw",
               height: "60px",
+              fontFamily: "Sf pro Display",
 
               paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
@@ -255,7 +256,7 @@ export default function ContectProduct() {
               saveForm();
             }}
           >
-            <Typography variant="button">Get call back</Typography>
+            <Typography variant="button">Get A Call Back</Typography>
           </Button>
         </Box>
       </Box>

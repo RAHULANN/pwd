@@ -22,7 +22,16 @@ export default function AboutUs() {
           mt: "130px",
           justifyContent: "center",
           alignContent: "center",
+          // border: "1px solid red",
           textAlign: "center",
+          direction: "flex",
+          flexDirection: "column",
+          justifyItems: "center",
+          // width: "90vw",
+          alignItems: "center",
+          // marginLeft: "auto",
+          // marginRight: "auto",
+
           padding: "0px 150px 0px 150px",
         }}
       >
@@ -31,8 +40,17 @@ export default function AboutUs() {
           sx={{
             color: "#384F9B",
             lineHeight: "60px",
+            display: "flex",
+            justifyItems: "center",
+            alignItems: "center",
             fontWeight: "500",
             fontSize: "48px",
+            // border: "1px solid red",
+            width: "70vw",
+            // marginLeft: "auto",
+            paddingLeft: "5%",
+            justifyContent: "center",
+            alignContent: "center",
           }}
         >
           Progressive Descallent Water Treatment Chemicals
@@ -54,6 +72,8 @@ export default function AboutUs() {
             variant="body3"
             sx={{
               fontFamily: "SF Pro Display",
+              fontSize: "20px",
+              letterSpacing: "1px",
             }}
           >
             PD Sales Corporation is now PDWT Chemicals LLP,
@@ -74,6 +94,8 @@ export default function AboutUs() {
             variant="body3"
             sx={{
               fontFamily: "SF Pro Display",
+              fontSize: "20px",
+              letterSpacing: "1px",
             }}
           >
             From cooling towers to boilers, our economical and easy-to-handle
@@ -88,6 +110,8 @@ export default function AboutUs() {
             variant="body3"
             sx={{
               fontFamily: "SF Pro Display",
+              fontSize: "20px",
+              letterSpacing: "1px",
             }}
           >
             Trust PD Chemicals for industry-leading water treatment solutions.
@@ -146,7 +170,7 @@ export default function AboutUs() {
               }}
             >
               {" "}
-              industrial hubs in india
+              Industrial hubs in india
             </Typography>
           </Box>
 
@@ -161,7 +185,7 @@ export default function AboutUs() {
               }}
             >
               {" "}
-              reduced maintenance costs
+              Reduced maintenance costs
             </Typography>
           </Box>
         </Box>
@@ -190,9 +214,20 @@ export default function AboutUs() {
           <Box
             sx={{
               background: "#D9D9D9",
+              borderRadius: "4px",
+              height: "98%",
+              padding: "0px",
             }}
           >
-            <img src={ManImg} alt="" width={"90%"} />
+            <img
+              src={ManImg}
+              alt=""
+              height={"100%"}
+              style={{
+                objectFit: "contain",
+              }}
+              width={"100%"}
+            />
           </Box>
           <Box>
             <Typography
@@ -209,6 +244,7 @@ export default function AboutUs() {
                 color: "#D7D7D7",
                 fontSize: "12px",
                 fontWeight: "500",
+                fontStyle: "italic",
               }}
             >
               {" "}
@@ -247,6 +283,8 @@ export default function AboutUs() {
               color: "#F2F2F2",
               fontSize: "20px",
               fontWeight: "500",
+              mt: "30px",
+              letterSpacing: "1px",
             }}
           >
             In 1994, we identified a critical challenge within the utility
@@ -264,6 +302,7 @@ export default function AboutUs() {
               fontSize: "20px",
               fontWeight: "500",
               mt: "20px",
+              letterSpacing: "1px",
             }}
           >
             Our chemicals effectively prevent scaling and disperse easily within
@@ -280,6 +319,7 @@ export default function AboutUs() {
               fontSize: "20px",
               fontWeight: "500",
               mt: "20px",
+              letterSpacing: "1px",
             }}
           >
             Continuing the legacy of PD Sales Corporation, we have evolved into

@@ -305,7 +305,7 @@ const ContactUsPopUp = (props) => {
                 style={{
                   width: "34vw",
                   height: "100px",
-
+                  fontFamily: "Sf pro Display",
                   paddingLeft: "20px",
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
@@ -346,7 +346,7 @@ const ContactUsPopUp = (props) => {
                   saveForm();
                 }}
               >
-                <Typography variant="button1">Get call back</Typography>
+                <Typography variant="button1">Get A Call Back</Typography>
               </Button>
             </Box>
           </Box>

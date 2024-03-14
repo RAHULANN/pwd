@@ -229,7 +229,7 @@ export default function Home() {
                 >
                   <Typography variant="subtitle1">
                     {" "}
-                    Cooling tower chemicals
+                    Cooling Tower Chemicals
                   </Typography>
 
                   <Typography variant="body1">
@@ -332,7 +332,12 @@ export default function Home() {
           </section>
         </Box>
 
-        <section id="industry">
+        <section
+          id="industry"
+          style={{
+            paddingTop: "20px",
+          }}
+        >
           <Industry />
         </section>
 

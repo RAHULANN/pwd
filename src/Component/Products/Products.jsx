@@ -153,7 +153,8 @@ export default function Products() {
                     color:
                       currentState == "prod" + index ? "#FFFFFF" : "#636366",
                     ":hover": {
-                      background: "",
+                      background:
+                        currentState == "prod" + index ? "#2A4596" : "",
                     },
                   }}
                   onClick={() => {

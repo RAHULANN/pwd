@@ -42,6 +42,9 @@ function PopupWithTrigger(props) {
         aria-describedby={"popup-without-portal-fixed"}
         type="button"
         onClick={handleClick}
+        sx={{
+          overflow: "hidden",
+        }}
       >
         Contact us
       </Button>
@@ -50,6 +53,11 @@ function PopupWithTrigger(props) {
         open={open}
         anchor={anchor}
         {...other}
+        sx={{
+          zIndex: "6000",
+          position: "sticky",
+          top: "40",
+        }}
       >
         <PopupBody>
           <Box
@@ -60,6 +68,7 @@ function PopupWithTrigger(props) {
               justifyContent: "center",
               alignContent: "center",
               gap: "10px",
+              zIndex: "6000",
             }}
           >
             <Typography
@@ -146,6 +155,8 @@ const PopupBody = styled("div")(
   align-items: center;
   align-content:center;
   padding: 16px;
+  z-index:50000;
+  position:sticky;
   margin: 8px;
   border-radius: 8px;
   background-color: #E4F2FC;

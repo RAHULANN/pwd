@@ -44,7 +44,7 @@ export default function HomeProducts() {
             padding: "30px",
           }}
         >
-          <Typography variant="subtitle1"> Boiler chemicals</Typography>
+          <Typography variant="subtitle1"> Boiler Chemicals</Typography>
 
           <Typography variant="body1">
             {" "}
@@ -125,7 +125,7 @@ export default function HomeProducts() {
             padding: "30px",
           }}
         >
-          <Typography variant="subtitle1"> AHU descaling chemicals</Typography>
+          <Typography variant="subtitle1"> AHU Descaling Chemicals</Typography>
 
           <Typography variant="body1">
             {" "}

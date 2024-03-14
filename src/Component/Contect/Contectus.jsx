@@ -215,6 +215,7 @@ export default function Contectus() {
             style={{
               width: "34vw",
               height: "100px",
+              fontFamily: "Sf pro Display",
 
               paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
@@ -256,7 +257,7 @@ export default function Contectus() {
               saveForm();
             }}
           >
-            <Typography variant="button1">Get call back</Typography>
+            <Typography variant="button1">Get A Call Back</Typography>
           </Button>
         </Box>
       </Box>

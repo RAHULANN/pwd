@@ -50,7 +50,7 @@ export default function HomeProduct45() {
             }}
           >
             {" "}
-            Offline / online Descaling Chemicals
+            Offline / Online Descaling Chemicals
           </Typography>
 
           <Typography
@@ -78,7 +78,7 @@ export default function HomeProduct45() {
               {" "}
               Say goodbye to downtime and inefficiencies
             </span>
-            with our targeted solutions.
+            {" with our targeted solutions."}
           </Typography>
           <Button
             onClick={() => {
@@ -139,7 +139,7 @@ export default function HomeProduct45() {
             padding: "30px",
           }}
         >
-          <Typography variant="subtitle1"> Chiller tower Chemicals</Typography>
+          <Typography variant="subtitle1"> Chiller Tower Chemicals</Typography>
 
           <Typography variant="body1">
             {" "}
@@ -149,9 +149,9 @@ export default function HomeProduct45() {
               }}
             >
               {" "}
-              Improve industrial/commercial chiller systems
-            </span>{" "}
-            with our premium Chiller Tower Chemicals. Designed to
+              {"Improve industrial/commercial chiller systems  "}
+            </span>
+            {" with our premium Chiller Tower Chemicals. Designed to "}
             <span
               style={{
                 color: "#2C2C2E",
@@ -165,7 +165,7 @@ export default function HomeProduct45() {
                 color: "#2C2C2E",
               }}
             >
-              reliable cooling & minimal maintenance.
+              {" reliable cooling & minimal maintenance."}
             </span>
           </Typography>
           <Button

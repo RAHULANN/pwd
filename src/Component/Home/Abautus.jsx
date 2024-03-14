@@ -17,7 +17,7 @@ export default function Abautus() {
           justifyContent: "center",
           alignContent: "center",
           alignItems: "center",
-          gap: "30px",
+          gap: "10px",
         }}
       >
         <Box>
@@ -36,7 +36,10 @@ export default function Abautus() {
             sx={{
               fontSize: "20px",
               color: "#E0E8EE",
-              fontWeight: "600",
+
+              fontWeight: "500",
+
+              letterSpacing: "1px",
               textAlign: "center",
             }}
           >
