@@ -190,13 +190,13 @@ export default function Products() {
                 marginBottom: "-30px",
               }}
             >
-              {currentState == "prod0" && (
+              {currentState == "prod0" && index == 0 && (
                 <Box
                   sx={{
                     width: "90vw",
                     marginLeft: "auto",
                     marginRight: "auto",
-                    mt: "40px",
+                    mt: "20px",
                     mb: "30px",
                   }}
                 >
