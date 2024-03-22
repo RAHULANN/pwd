@@ -30,6 +30,13 @@ export default function Contectus() {
         gridTemplateColumns: "50% 40%",
         justifyContent: "center",
         gap: "40px",
+        '@media(max-width: 700px)' : {
+          display: "flex",
+          width: "99vw",
+         flexDirection:"column-reverse",
+        padding: "50px 0px 50px 0px",
+
+          }
       }}
     >
       <Box
@@ -48,6 +55,10 @@ export default function Contectus() {
             gap: "30px",
             mt: "50px",
             fontFamily: "Sf pro Display",
+
+            '@media(max-width: 700px)' : {
+              padding: "10px",
+              }
           }}
         >
           <Typography variant="body3">
@@ -135,52 +146,71 @@ export default function Contectus() {
           border: "1px rgba(0, 0, 0, 0.3)",
           borderRadius: "10px",
           display: "grid",
-          width: "100%",
+          width: "98%",
           gridTemplateColumns: "1fr",
           fontFamily: "Sf pro Display",
 
           alignContent: "center",
           alignItems: "center",
           justifyItems: "center",
-          padding: "20px",
+        
           gridGap: "20px",
           boxShadow: "9px 10px 36.099998474121094px 0px rgba(0, 0, 0, 0.12)",
+
+          '@media(max-width: 700px)' : {
+            padding: "1px",
+            }
         }}
       >
-        <Box>
+        <Box sx={{
+          width:"95%",
+          '@media(max-width: 700px)' : {
+            width: "90vw",
+            mt:"20px"
+          
+            }
+        }}>
           <input
             style={{
-              width: "34vw",
+              width: "100%",
               height: "60px",
 
-              paddingLeft: "20px",
+              // paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
               fontSize: "20px",
               color: "#222224",
+             
             }}
             value={formData.name}
             onChange={(e) => {
               setFormData((prev) => ({ ...prev, name: e.target.value }));
             }}
             required={true}
-            placeholder={"Name *"}
+            placeholder={" Name *"}
           />
         </Box>
-        <Box>
+        <Box sx={{
+          width:"95%",
+          '@media(max-width: 700px)' : {
+            width: "90vw",
+            mt:"20px"
+          
+            }
+        }}>
           <input
             style={{
-              width: "34vw",
+              width: "100%",
               height: "60px",
-              paddingLeft: "20px",
+              // paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
               fontSize: "20px",
               color: "#222224",
             }}
-            placeholder={"E-Mail ID *"}
+            placeholder={" E-Mail ID *"}
             value={formData.email}
             onChange={(e) => {
               setFormData((prev) => ({ ...prev, email: e.target.value }));
@@ -188,13 +218,20 @@ export default function Contectus() {
             required={true}
           />
         </Box>
-        <Box>
+        <Box sx={{
+          width:"95%",
+          '@media(max-width: 700px)' : {
+            width: "90vw",
+            mt:"20px"
+          
+            }
+        }}>
           <input
             style={{
-              width: "34vw",
+              width: "100%",
               height: "60px",
 
-              paddingLeft: "20px",
+              // paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
@@ -206,25 +243,32 @@ export default function Contectus() {
               setFormData((prev) => ({ ...prev, phone: e.target.value }));
             }}
             required={true}
-            placeholder={"Phone number *"}
+            placeholder={" Phone number *"}
           />
         </Box>
 
-        <Box>
+        <Box sx={{
+          width:"95%",
+          '@media(max-width: 700px)' : {
+            width: "90vw",
+            mt:"20px"
+          
+            }
+        }}>
           <textarea
             style={{
-              width: "34vw",
+              width: "100%",
               height: "100px",
               fontFamily: "Sf pro Display",
 
-              paddingLeft: "20px",
+              // paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
               fontSize: "20px",
               color: "#222224",
             }}
-            placeholder={"How can we help you "}
+            placeholder={" How can we help you "}
             value={formData.howwecanhelp}
             onChange={(e) => {
               setFormData((prev) => ({
@@ -252,6 +296,11 @@ export default function Contectus() {
               ":hover": {
                 background: "#2C407C",
               },
+              '@media(max-width: 700px)' : {
+                width: "93vw",
+              mb:"40px"
+              
+                }
             }}
             onClick={() => {
               saveForm();

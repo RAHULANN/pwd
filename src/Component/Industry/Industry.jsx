@@ -56,16 +56,35 @@ export default function Industry() {
         margin: "auto",
         padding: "40px",
         mt: "40px",
+        '@media(max-width: 700px)' : {
+          width: "96%",
+          padding: "10px",
+          mt: "0px",
+         }
       }}
     >
-      <Typography variant="h5"> Industries we serve</Typography>
+      <Typography variant="h5" 
+      sx={{
+        
+      '@media(max-width: 700px)' : {
+        
+       fontSize:'32px'
+      }
+      }}
+      > Industries we serve</Typography>
 
       <Box
         sx={{
           display: "grid",
           gridTemplateColumns: "repeat(5,1fr)",
+        
           mt: "50px",
           gap: "80px",
+          '@media(max-width: 700px)' : {
+            gridTemplateColumns: "repeat(3,1fr)",
+            gap: "20px",
+         
+           }
         }}
       >
         {data?.map((el) => (
@@ -76,16 +95,32 @@ export default function Industry() {
               gap: "10px",
               height: "97px",
               fontFamily: "Sf pro Display",
+              '@media(max-width: 700px)' : {
+                height: "70px",
+             
+               }
             }}
           >
             <Box
               sx={{
                 height: "80%",
+                '@media(max-width: 700px)' : {
+                  height: "50%",
+               
+                 }
               }}
             >
-              <img src={el.url} alt="" />
+              <img src={el.url} alt="" height={"100%"} />
             </Box>
-            <Typography variant="callout"> {el.name}</Typography>
+            <Typography variant="callout" 
+            
+            sx={{
+              '@media(max-width: 700px)' : {
+               fontSize:"12.08px"
+             
+               }
+            }}
+            > {el.name}</Typography>
           </Box>
         ))}
       </Box>

@@ -7,6 +7,7 @@ import second from "../../utilities/Icons/KeyFacts/second.svg";
 import three from "../../utilities/Icons/KeyFacts/three.svg";
 import four from "../../utilities/Icons/KeyFacts/four.svg";
 import { Box, Typography } from "@mui/material";
+import KeyFactMob from "./KeyFactMob";
 
 export default function KeyFacts() {
   return (
@@ -15,11 +16,37 @@ export default function KeyFacts() {
         sx={{
           width: "95vw",
           padding: "60px",
+          '@media(max-width: 700px)' : {
+            width: "98vw",
+            padding: "10px",
+            mt:"50px"
+              
+              }
         }}
       >
         <Typography variant="h5">Key Facts</Typography>
       </Box>
-      <div className="mainboxkey">
+
+<Box sx={{
+  display:"none",
+    '@media(max-width: 700px)' : {
+  display:"block"
+    
+    }
+}} >
+<KeyFactMob/>
+</Box>
+      
+   <Box 
+   sx={{
+    display:"none",
+      '@media(min-width: 750px)' : {
+    display:"block"
+      
+      }
+  }}
+   >
+   <div className="mainboxkey">
         <div className="left">
           <Box className="firstboxanimation">
             <img src={first} height="60px" alt="" />
@@ -68,6 +95,7 @@ export default function KeyFacts() {
           </div>
         </div>
       </div>
+   </Box>
     </Box>
   );
 }

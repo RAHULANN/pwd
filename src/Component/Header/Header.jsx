@@ -36,7 +36,15 @@ export default function Header({ page }) {
 
   return (
     <header className="Header">
-      <img src={logo} className="Logo" alt="logo" />
+      <img src={logo} className="Logo" alt="logo"  
+      
+      
+      style={{
+        '@media (max-width: 500px)': {
+          display: "none"
+        },
+      }}
+      />
 
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
