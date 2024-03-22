@@ -140,7 +140,7 @@ export default function AboutUs() {
               }}
             >
               {" "}
-              3.5 million m3/hour water treated
+              3.5 Million m3/hour water treated
             </Typography>
           </Box>
 
@@ -155,7 +155,7 @@ export default function AboutUs() {
               }}
             >
               {" "}
-              100+ valued customers
+              100+ Valued customers
             </Typography>
           </Box>
 
@@ -225,6 +225,10 @@ export default function AboutUs() {
               height={"100%"}
               style={{
                 objectFit: "contain",
+                padding:"0px",
+              borderRadius: "4px",
+
+                marginBottom:"-4px"
               }}
               width={"100%"}
             />
@@ -248,7 +252,7 @@ export default function AboutUs() {
               }}
             >
               {" "}
-              (1963-2023)
+              {/* (1963-2023) */}
             </Typography>
 
             <Typography

@@ -51,11 +51,12 @@ export default function KeyFacts() {
                 sx={{
                   fontSize: "30px",
                   fontWeight: 600,
+                  color:"#000",
                 }}
               >
                 100 +
               </Typography>
-              <Typography variant="body2">valued customers</Typography>
+              <Typography variant="body2">Valued Customers</Typography>
             </Box>
           </div>
           <div className="fouranimationbox">

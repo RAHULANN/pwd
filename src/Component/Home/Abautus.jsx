@@ -48,7 +48,7 @@ export default function Abautus() {
                 color: "#FFFFFF",
               }}
             >
-              PDWT Chemicals LLP,
+              {"PDWT Chemicals LLP, "}
             </span>
             formerly known as
             <span
@@ -56,7 +56,7 @@ export default function Abautus() {
                 color: "#FFFFFF",
               }}
             >
-              PD Sales Corporation,
+             {" PD Sales Corporation, "}
             </span>
             with over
             <span
@@ -64,7 +64,7 @@ export default function Abautus() {
                 color: "#FFFFFF",
               }}
             >
-              30 years of specialized experience.
+              {" 30 years of specialized experience. "}
             </span>
             At PDWT Chemicals, we understand the unique challenges faced by our
             clients. Our approach isn't just about efficiency – it's a
