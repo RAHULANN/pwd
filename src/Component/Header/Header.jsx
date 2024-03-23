@@ -8,10 +8,21 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 import logo from "../../utilities/Icons/logo.svg";
 import DisabledPortalPopup from "./Conectus";
+import Cont from "./Cont";
+import { Box } from "@mui/material";
 export default function Header({ page }) {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
+  const [popup,setpopup]=useState(false)
+  useEffect(()=>{
+ if(!isNavVisible){
+  if(popup){
+    setpopup(false)
+  }
+ }
+
+  },[isNavVisible])
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 700px)");
     mediaQuery.addListener(handleMediaQueryChange);
@@ -36,6 +47,10 @@ export default function Header({ page }) {
 
   return (
     <header className="Header">
+ 
+      <Cont open ={popup}/>
+
+     
       <Link to={"/"}> 
       
       
@@ -53,7 +68,7 @@ export default function Header({ page }) {
 
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
-        timeout={350}
+        timeout={30}
         classNames="NavAnimation"
         unmountOnExit
       >
@@ -107,8 +122,23 @@ export default function Header({ page }) {
               About us
             </a>
           </Link>
-          {/* <button>Contact us</button> */}
-          <DisabledPortalPopup />
+          <button
+          
+          onClick={()=>{
+            setpopup(!popup)
+          }}
+          style={{
+              
+          overflow: "hidden",
+          padding:"0px, 16px, 0px, 16px",
+          borderRadius:"4px",
+          fontFamily:"SF Pro Display",
+          fontSize:"16px",
+          fontWeight:"500"
+       
+          }}>Contact us</button>
+
+          {/* <DisabledPortalPopup /> */}
         </nav>
       </CSSTransition>
       <button onClick={toggleNav} className="Burger">

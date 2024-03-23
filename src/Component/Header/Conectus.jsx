@@ -11,7 +11,7 @@ export default function DisabledPortalPopup() {
         display: "flex",
         gap: "10px",
         overflowY: "auto",
-        position: "relative",
+       
         // padding: "40px",
       }}
     >
@@ -55,11 +55,17 @@ function PopupWithTrigger(props) {
         {...other}
         sx={{
           zIndex: "6000",
-          position: "sticky",
+         
           top: "40",
         }}
       >
-        <PopupBody>
+        <PopupBody 
+        
+        sx={{
+          zIndex: "60000",
+          position:"sticky"
+        }}
+        >
           <Box
             sx={{
               display: "flex",
@@ -68,7 +74,8 @@ function PopupWithTrigger(props) {
               justifyContent: "center",
               alignContent: "center",
               gap: "10px",
-              zIndex: "6000",
+             
+              zIndex: "60000",
             }}
           >
             <Typography
@@ -78,6 +85,8 @@ function PopupWithTrigger(props) {
                 fontSize: "18px",
                 width: "100%",
                 alignContent: "center",
+              zIndex: "60000",
+
               }}
             >
               CONTACT US
@@ -131,7 +140,7 @@ PopupWithTrigger.propTypes = {
 };
 
 const Popup = styled(BasePopup)`
-  z-index: 1;
+  z-index: 4000;
 `;
 
 const grey = {

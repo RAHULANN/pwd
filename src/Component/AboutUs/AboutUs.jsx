@@ -189,6 +189,7 @@ export default function AboutUs() {
             '@media(max-width: 700px)' : {
                
               gap: "20px",
+              mb:"-30px"
   
                
               }
@@ -199,10 +200,10 @@ export default function AboutUs() {
             
             sx={{
               
-              height:"100%",
+              height:"45%",
 
               '@media(max-width: 700px)' : {
-                height:"50%",
+                height:"30%",
                 gap: "20px",
     
                  
@@ -238,10 +239,10 @@ export default function AboutUs() {
             
             sx={{
               
-              height:"100%",
+              height:"45%",
 
               '@media(max-width: 700px)' : {
-                height:"50%",
+                height:"30%",
                 gap: "20px",
     
                  
@@ -278,10 +279,10 @@ export default function AboutUs() {
             
             sx={{
               
-              height:"100%",
+              height:"45%",
 
               '@media(max-width: 700px)' : {
-                height:"50%",
+                height:"30%",
                 gap: "20px",
     
                  
@@ -316,10 +317,10 @@ export default function AboutUs() {
             
             sx={{
               
-              height:"100%",
+              height:"45%",
 
               '@media(max-width: 700px)' : {
-                height:"50%",
+                height:"30%",
                 gap: "20px",
     
                  
