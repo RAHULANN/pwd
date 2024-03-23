@@ -1,9 +1,10 @@
+import { Box } from "@mui/material";
 import React from "react";
 
 export default function Footer() {
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         width: "100vw",
         background: "#243360",
         fontFamily: "Petrona",
@@ -16,9 +17,13 @@ export default function Footer() {
         justifyContent: "center",
         alignItems: "center",
         fontWeight: "500",
+        '@media(max-width: 700px)' : {
+          fontSize: "12px",
+             
+            }
       }}
     >
       <p>© 2024 Copyright - All Rights Reserved PDWT Chemicals LLP</p>
-    </div>
+    </Box>
   );
 }

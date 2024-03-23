@@ -41,7 +41,14 @@ const ContactUsPopUp = (props) => {
       maxWidth="80vw"
       fullWidth={true}
       sx={{
-        height: "700px",
+        height: "650px",
+        mt:"50px",
+        '@media(max-width: 700px)' : {
+        
+          width: "100vw",
+    
+
+          }
         // width: "900px",
       }}
       PaperProps={{
@@ -118,6 +125,14 @@ const ContactUsPopUp = (props) => {
             gridTemplateColumns: "50% 40%",
             justifyContent: "center",
             gap: "30px",
+            '@media(max-width: 700px)' : {
+              display: "flex",
+              width: "80vw",
+              margin:"auto",
+             flexDirection:"column-reverse",
+            padding: "10px 0px 10px 0px",
+    
+              }
           }}
         >
           <Box
@@ -136,6 +151,9 @@ const ContactUsPopUp = (props) => {
                 gap: "30px",
                 mt: "50px",
                 fontFamily: "Sf pro Display",
+                '@media(max-width: 700px)' : {
+                  padding: "10px",
+                  }
               }}
             >
               <Typography variant="body3">
@@ -207,14 +225,43 @@ const ContactUsPopUp = (props) => {
                 padding: "40px",
                 gap: "30px",
                 // height: "30px",
+                width:"50%",
                 mt: "50px",
+                    
+          '@media(max-width: 700px)' : {
+            
+            width:"70%"
+            }
               }}
             >
-              <img src={Linkedin} alt="" />
-              <img src={Whatsapp} alt="" />
+              <Box  
+              
+              sx={{
+                '@media(max-width: 700px)' : {
+            
+                  width:"50%"
+                  }
+              }}
+              >
+              <img src={Linkedin} width={"100%"} alt="" />
 
-              {/* <Linkedin /> */}
-              {/* <Whatsapp /> */}
+              </Box>
+
+              <Box  
+              
+              sx={{
+                '@media(max-width: 700px)' : {
+            
+                  width:"50%"
+                  }
+              }}
+              >
+                           <img src={Whatsapp} width={"100%"} alt="" />
+
+
+              </Box>
+
+          
             </Box>
           </Box>
           <Box
@@ -234,15 +281,28 @@ const ContactUsPopUp = (props) => {
               gridGap: "20px",
               boxShadow:
                 "9px 10px 36.099998474121094px 0px rgba(0, 0, 0, 0.12)",
+                
+          '@media(max-width: 700px)' : {
+            padding: "0px",
+            }
             }}
           >
-            <Box>
+              <Box sx={{
+          width:"95%",
+          '@media(max-width: 700px)' : {
+            width: "75vw",
+            padding: "0px, 1px, 0px, 1px",
+            display:"flex",
+            justifyContent:"center",
+            mt:"20px" 
+            }
+        }}>
               <input
                 style={{
-                  width: "34vw",
+                  width: "100%",
                   height: "60px",
                   fontSize: "20px",
-                  paddingLeft: "20px",
+                  // paddingLeft: "20px",
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
                   outline: "none",
@@ -253,15 +313,24 @@ const ContactUsPopUp = (props) => {
                   setFormData((prev) => ({ ...prev, name: e.target.value }));
                 }}
                 required={true}
-                placeholder={"Name *"}
+                placeholder={" Name *"}
               />
             </Box>
-            <Box>
+            <Box sx={{
+          width:"95%",
+          '@media(max-width: 700px)' : {
+            width: "75vw",
+            padding: "0px, 1px, 0px, 1px",
+            display:"flex",
+            justifyContent:"center"
+          
+            }
+        }}>
               <input
                 style={{
-                  width: "34vw",
+                  width: "100%",
                   height: "60px",
-                  paddingLeft: "20px",
+                  // paddingLeft: "20px",
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
                   outline: "none",
@@ -269,7 +338,7 @@ const ContactUsPopUp = (props) => {
                   color: "#222224",
                 }}
                 type="email"
-                placeholder={"E-Mail ID *"}
+                placeholder={" E-Mail ID *"}
                 value={formData.email}
                 onChange={(e) => {
                   setFormData((prev) => ({ ...prev, email: e.target.value }));
@@ -277,13 +346,22 @@ const ContactUsPopUp = (props) => {
                 required={true}
               />
             </Box>
-            <Box>
+            <Box sx={{
+          width:"95%",
+          '@media(max-width: 700px)' : {
+            width: "75vw",
+            padding: "0px, 1px, 0px, 1px",
+            display:"flex",
+            justifyContent:"center"
+          
+            }
+        }}>
               <input
                 style={{
-                  width: "34vw",
+                  width: "100%",
                   height: "60px",
 
-                  paddingLeft: "20px",
+                  // paddingLeft: "20px",
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
                   outline: "none",
@@ -296,24 +374,33 @@ const ContactUsPopUp = (props) => {
                 }}
                 type="number"
                 required={true}
-                placeholder={"Phone number *"}
+                placeholder={" Phone number *"}
               />
             </Box>
 
-            <Box>
+            <Box sx={{
+          width:"95%",
+          '@media(max-width: 700px)' : {
+            width: "75vw",
+            padding: "0px, 1px, 0px, 1px",
+            display:"flex",
+            justifyContent:"center"
+          
+            }
+        }}>
               <textarea
                 style={{
-                  width: "34vw",
+                  width: "100%",
                   height: "100px",
                   fontFamily: "Sf pro Display",
-                  paddingLeft: "20px",
+                  // paddingLeft: "20px",
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
                   outline: "none",
                   fontSize: "20px",
                   color: "#222224",
                 }}
-                placeholder={"How can we help you "}
+                placeholder={" How can we help you "}
                 value={formData.howwecanhelp}
                 onChange={(e) => {
                   setFormData((prev) => ({
@@ -341,6 +428,13 @@ const ContactUsPopUp = (props) => {
                   ":hover": {
                     background: "#2C407C",
                   },
+                  '@media(max-width: 700px)' : {
+                    width: "75vw",
+                    padding: "0px, 1px, 0px, 1px",
+                    mb:"20px"
+                  
+                  
+                    }
                 }}
                 onClick={() => {
                   saveForm();

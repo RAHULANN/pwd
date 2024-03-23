@@ -28,3 +28,16 @@
     }
 }
 
+
+
+.homesectionone{
+    height: 700px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+    .homesectionone{
+        height: 550px;
+        overflow: hidden;
+    }
+  }

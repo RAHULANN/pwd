@@ -8,9 +8,9 @@ export default function HomeProducts() {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="product23home"
-      style={{
+    <Box
+      // className="product23home"
+      sx={{
         width: "90%",
         display: "grid",
 
@@ -21,6 +21,13 @@ export default function HomeProducts() {
         background: "#F3F2F6",
         // marginTop: "70px",
         margin: "40px auto auto auto",
+        '@media(max-width: 700px)' : {
+          gridTemplateColumns: "1fr",
+          width: "95%",
+          margin: "10px auto auto auto",
+          mt:"40px"
+         
+        }
       }}
     >
       <Box
@@ -36,17 +43,43 @@ export default function HomeProducts() {
           margin: "auto",
           borderRadius: "24px",
           background: "#FFFFFF",
+          '@media(max-width: 700px)' : {
+            gridTemplateRows: "200px 200px",
+          height: "400px",
+
+           
+          }
         }}
       >
         <Box
           sx={{
             ml: "30px",
             padding: "30px",
+            '@media(max-width: 700px)' : {
+              padding: "5px",
+              ml: "10px",
+             
+            }
           }}
         >
-          <Typography variant="subtitle1"> Boiler Chemicals</Typography>
+          <Typography variant="subtitle1" sx={{
+               '@media(max-width: 700px)' : {
+                fontSize:"24px"
+              
+               
+              }
+          }}> Boiler Chemicals</Typography>
 
-          <Typography variant="body1">
+          <Typography variant="body1"  
+         sx={{
+           
+          '@media(max-width: 700px)' : {
+            fontSize:"16px"
+          
+           
+          }
+         }}
+          >
             {" "}
             Ensure{" "}
             <span
@@ -89,6 +122,11 @@ export default function HomeProducts() {
 
                   color: "#2A4596",
                 },
+                '@media(max-width: 700px)' : {
+                  fontSize:"13px"
+                
+                 
+                }
               }}
             >
               {" "}
@@ -117,17 +155,47 @@ export default function HomeProducts() {
           margin: "auto",
           background: "#FFFFFF",
           borderRadius: "24px",
+          '@media(max-width: 700px)' : {
+          height: "460px",
+
+            gridTemplateRows: "260px 200px",
+           
+          }
         }}
       >
         <Box
           sx={{
             ml: "30px",
             padding: "30px",
+            '@media(max-width: 700px)' : {
+              padding: "5px",
+              ml: "10px",
+             
+            }
           }}
         >
-          <Typography variant="subtitle1"> AHU Descaling Chemicals</Typography>
+          <Typography variant="subtitle1" 
+          
+          sx={{
+            '@media(max-width: 700px)' : {
+              fontSize:"24px"
+            
+             
+            }
+          }}
+          > AHU Descaling Chemicals</Typography>
 
-          <Typography variant="body1">
+          <Typography variant="body1"
+          
+          sx={{
+           
+            '@media(max-width: 700px)' : {
+              fontSize:"16px"
+            
+             
+            }
+           }}
+          >
             {" "}
             <span
               style={{
@@ -183,6 +251,6 @@ export default function HomeProducts() {
           <img src={product3} width="100%" alt="" />
         </Box>
       </Box>
-    </div>
+    </Box>
   );
 }

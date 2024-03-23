@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 export default function HomeProduct45() {
   const navigate = useNavigate();
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         width: "90%",
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
@@ -18,6 +18,14 @@ export default function HomeProduct45() {
         background: "#F3F2F6",
         // marginTop: "70px",
         margin: "40px auto auto auto",
+        '@media(max-width: 700px)' : {
+          gridTemplateColumns: "1fr",
+          width: "95%",
+
+          margin: "10px auto auto auto",
+          mt:"40px"
+         
+        }
       }}
     >
       <Box
@@ -35,18 +43,34 @@ export default function HomeProduct45() {
           margin: "auto",
           borderRadius: "24px",
           background: "#FFFFFF",
+          '@media(max-width: 700px)' : {
+            gridTemplateRows: "270px 200px",
+          height: "470px",
+
+           
+          }
         }}
       >
         <Box
           sx={{
             ml: "30px",
             padding: "30px",
+            '@media(max-width: 700px)' : {
+              padding: "5px",
+              ml: "10px",
+             
+            }
           }}
         >
           <Typography
             variant="subtitle1"
             sx={{
               lineHeight: "35px",
+              '@media(max-width: 700px)' : {
+                fontSize:"24px"
+              
+               
+              }
             }}
           >
             {" "}
@@ -57,6 +81,15 @@ export default function HomeProduct45() {
             variant="body1"
             sx={{
               mt: "10px",
+
+            
+           
+                '@media(max-width: 700px)' : {
+                  fontSize:"16px"
+                
+                 
+                }
+             
             }}
           >
             {" "}
@@ -88,6 +121,7 @@ export default function HomeProduct45() {
               // background: "#F2f2f7",
               mt: "10px",
 
+
               // color: "#3A3A3C",
             }}
           >
@@ -101,6 +135,11 @@ export default function HomeProduct45() {
 
                   color: "#2A4596",
                 },
+                '@media(max-width: 700px)' : {
+                  fontSize:"13px"
+                
+                 
+                }
               }}
             >
               {" "}
@@ -131,17 +170,48 @@ export default function HomeProduct45() {
           margin: "auto",
           background: "#FFFFFF",
           borderRadius: "24px",
+
+          '@media(max-width: 700px)' : {
+            gridTemplateRows: "250px 200px",
+          height: "450px",
+
+           
+          }
         }}
       >
         <Box
           sx={{
             ml: "30px",
             padding: "30px",
+            '@media(max-width: 700px)' : {
+              padding: "5px",
+              ml: "10px",
+             
+            }
           }}
         >
-          <Typography variant="subtitle1"> Chiller Tower Chemicals</Typography>
+          <Typography variant="subtitle1" 
+          
+          sx={{
+            '@media(max-width: 700px)' : {
+              fontSize:"24px"
+            
+             
+            }
+          }}
+          > Chiller Tower Chemicals</Typography>
 
-          <Typography variant="body1">
+          <Typography variant="body1"
+          
+          sx={{
+           
+            '@media(max-width: 700px)' : {
+              fontSize:"16px"
+            
+             
+            }
+           }}
+          >
             {" "}
             <span
               style={{
@@ -189,6 +259,12 @@ export default function HomeProduct45() {
 
                   color: "#2A4596",
                 },
+
+                '@media(max-width: 700px)' : {
+                  fontSize:"13px"
+                
+                 
+                }
               }}
             >
               {" "}
@@ -204,6 +280,6 @@ export default function HomeProduct45() {
           <img src={product5} width="100%" alt="" />
         </Box>
       </Box>
-    </div>
+    </Box>
   );
 }

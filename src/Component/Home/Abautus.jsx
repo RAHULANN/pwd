@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { useNavigate } from "react-router-dom";
-export default function Abautus() {
+export default function   Abautus() {
   const navigate = useNavigate();
   return (
     <>
@@ -18,6 +18,11 @@ export default function Abautus() {
           alignContent: "center",
           alignItems: "center",
           gap: "10px",
+          '@media(max-Width: 700px)' : {
+            padding: "10px",
+            mt:"40px"
+           
+          }
         }}
       >
         <Box>
@@ -25,6 +30,10 @@ export default function Abautus() {
             variant="subtitle2"
             sx={{
               color: "#FFFFFF",
+              '@media(max-Width: 700px)' : {
+                fontSize:"20px"
+               
+              }
             }}
           >
             About Us
@@ -41,6 +50,12 @@ export default function Abautus() {
 
               letterSpacing: "1px",
               textAlign: "center",
+
+              '@media(max-Width: 700px)' : {
+                fontSize:"14px"
+               
+              }
+
             }}
           >
             <span
@@ -48,7 +63,7 @@ export default function Abautus() {
                 color: "#FFFFFF",
               }}
             >
-              PDWT Chemicals LLP,
+              {"PDWT Chemicals LLP, "}
             </span>
             formerly known as
             <span
@@ -56,7 +71,7 @@ export default function Abautus() {
                 color: "#FFFFFF",
               }}
             >
-              PD Sales Corporation,
+             {" PD Sales Corporation, "}
             </span>
             with over
             <span
@@ -64,10 +79,12 @@ export default function Abautus() {
                 color: "#FFFFFF",
               }}
             >
-              30 years of specialized experience.
+              {" 30 years of specialized experience. "}
             </span>
             At PDWT Chemicals, we understand the unique challenges faced by our
-            clients. Our approach isn't just about efficiency – it's a
+            clients.
+         
+             Our approach isn't just about efficiency – it's a
             commitment to scale prevention, ensuring the longevity of your
             equipment and the uninterrupted rhythm of your operations.
           </Typography>
@@ -81,12 +98,26 @@ export default function Abautus() {
               display: "flex",
               alignContent: "center",
               cursor: "pointer",
+              '@media(max-Width: 700px)' : {
+                fontSize:"14px",
+                alignItems:"center",
+               
+              }
             }}
             onClick={() => {
               navigate("/aboutus");
             }}
           >
-            Read more <ArrowRightIcon />
+            Read more <ArrowRightIcon sx={{
+                '@media(max-Width: 700px)' : {
+                  fontSize:"20px",
+                  mt:"1px",
+                alignItems:"center",
+
+              
+                 
+                }
+            }} />
           </Typography>
         </Box>
       </Box>

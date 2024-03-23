@@ -5,6 +5,8 @@ import Industry from "../Industry/Industry";
 
 import homeImg from "../../utilities/Icons/home.png";
 import product1 from "../../utilities/Icons/product1.png";
+import product1mo from "../../utilities/Icons/product1mo.png";
+
 import { Box, Button, Typography } from "@mui/material";
 import "./Home.css";
 import HomeProducts from "./HomeProducts";
@@ -23,6 +25,10 @@ export default function Home() {
   });
   const navigate = useNavigate();
 
+  const [pageUpdate,setPageUpdate]=useState(false)
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   const [contactUsPopUpState, setContactUsPopUpState] = useState(false);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -59,7 +65,7 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(currents);
+
   return (
     <div>
       <Header page={"Home"} />
@@ -79,10 +85,8 @@ export default function Home() {
         {currents?.home && (
           <section
             id="home"
-            style={{
-              height: "700px",
-              overflow: "hidden",
-            }}
+            className="homesectionone"
+           
           >
             <Box className="homepagemainbox">
               <Box
@@ -120,7 +124,11 @@ export default function Home() {
                 }}
               >
                 <Box>
-                  <Typography variant="h3">
+                  <Typography variant="h3" sx={{
+                 '@media (max-width: 500px)': {
+                  fontSize:"34px"
+                },
+                  }}>
                     {" "}
                     Extend Equipment lifespan with our advanced Scaling And
                     Corrosion Inhibitors!
@@ -156,6 +164,9 @@ export default function Home() {
                   height: "600px",
                   width: "100%",
                   mt: "-80px",
+                  '@media(max-width: 700px)' : {
+                    height: "300px",
+                  }
                 }}
               >
                 <img src={homeImg} width="100%" height="100%" alt="" />
@@ -168,7 +179,10 @@ export default function Home() {
           sx={{
             background: "#F3F2F6",
             width: "100%",
+           
             pb: "50px",
+            margin:"auto"
+         
           }}
         >
           <Box
@@ -185,6 +199,13 @@ export default function Home() {
                 mt: "60px",
                 ml: "50px",
                 mb: "20px",
+
+                '@media(max-width: 700px)' : {
+                fontSize:"32px",
+                ml: "5px",
+                mt: "40px",
+
+                }
               }}
             >
               {" "}
@@ -197,6 +218,11 @@ export default function Home() {
             style={{
               // height: "600px",
               height: currents?.product1 ? "" : "500px",
+
+              '@media(max-width: 700px)' : {
+              
+
+                }
             }}
           >
             {currents?.product1 && (
@@ -216,6 +242,15 @@ export default function Home() {
 
                   background: "#FFFFFF",
                   borderRadius: "24px",
+
+                  '@media(max-width: 700px)' : {
+              
+                    gridTemplateColumns: "1fr",
+                    width: "95%",
+                    margin: "auto",
+                    height: "auto",
+
+                  }
                   // border: "1px solid red",
                 }}
               >
@@ -224,15 +259,40 @@ export default function Home() {
                     ml: "70px",
                     mr: "-50px",
                     width: "100%",
+                    '@media(max-width: 700px)' : {
+                   
+                     margin:"auto 20px auto 20px",
+                     padding:"10px 20px 0px 20px",
+                     width: "85vw",
+                     
+                      // border: "1px solid red",
+                       }
                     // border: "1px solid red",
                   }}
                 >
-                  <Typography variant="subtitle1">
+                  <Typography variant="subtitle1" 
+                  
+                  sx={{
+                    '@media(max-width: 700px)' : {
+                   
+                   fontSize:"16px"
+                    }
+                  }}
+                  >
                     {" "}
                     Cooling Tower Chemicals
                   </Typography>
 
-                  <Typography variant="body1">
+                  <Typography variant="body1" 
+                  sx={{
+                    '@media(max-width: 700px)' : {
+                   
+                    
+                     fontSize:"12px"
+                       }
+                  }}
+                  
+                  >
                     {" "}
                     Our industry-leading{" "}
                     <span
@@ -247,15 +307,25 @@ export default function Home() {
                     heights.
                   </Typography>
 
-                  <Typography variant="body1">
+                  <Typography variant="body1" 
+                  
+                  sx={{
+                    '@media(max-width: 700px)' : {
+                   
+
+                    
+                     fontSize:"12px"
+                       }
+                  }}
+                  >
                     Experience seamless operations with
                     <span
                       style={{
                         color: "#2C2C2E",
                       }}
                     >
-                      our tailored solution for both utility and corporate
-                      sectors.
+                     {" our tailored solution for both utility and corporate sectors. "}
+                    
                     </span>
                   </Typography>
                   <Box>
@@ -280,6 +350,10 @@ export default function Home() {
 
                             color: "#2A4596",
                           },
+
+                          '@media(max-width: 700px)' : {
+                           fontSize:"13px"
+                            }
                         }}
                       >
                         {" "}
@@ -293,12 +367,50 @@ export default function Home() {
                     width: "100%",
                     height: "500px",
                     ml: "-70px",
-                    // overflow: "hidden",
-                    // border: "1px solid red",
-                    // backgroundImage: `url(${product1})`,
+                    display:"none",
+                    
+                    '@media(max-width: 700px)' : {
+                    display:"block",
+                     
+                      height: "250px",
+                      ml:"80px"
+                    }
+                  
                   }}
                 >
-                  <img src={product1} alt="" height="100%" />
+                
+               
+                   <img src={product1mo} alt="" height="100%" 
+                  
+                  
+                  />
+
+
+                </Box>
+
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: "500px",
+                    ml: "-70px",
+                    display:"none",
+                    '@media(min-width: 800px)' : {
+                      display:"block",
+                    
+                     
+                    }
+                  
+                  }}
+                >
+                
+                <img src={product1} alt="" height="100%" 
+                 
+                  
+                  
+                  />
+                  
+
+
                 </Box>
               </Box>
             )}
@@ -307,6 +419,10 @@ export default function Home() {
             id="product23"
             style={{
               height: currents?.product23 ? "" : "500px",
+              '@media(max-Width: 700px)' : {
+                height: currents?.product23 ? "" : "900px",
+               
+              }
             }}
           >
             {currents?.product23 && <HomeProducts />}
@@ -323,7 +439,7 @@ export default function Home() {
             id="product67"
             style={{
               height: "600px",
-              // overflow: "hidden",
+            
 
               height: currents?.product67 ? "" : "500px",
             }}
@@ -357,6 +473,9 @@ export default function Home() {
           id="contectus"
           style={{
             height: currents?.contectus ? "" : "500px",
+        background: "#F3F2F6",
+        margin:"auto",
+
           }}
         >
           {currents?.contectus && <Contectus />}

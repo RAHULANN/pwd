@@ -25,19 +25,35 @@ export default function ProductBox({ data, index = 0 }) {
         marginRight: "auto",
         justifyContent: "center",
         mt: "85px",
+
+        
+
+        '@media(max-width: 700px)' : {
+          gridTemplateColumns: "1fr",
+          flexDirection: "column-reverse",  
+          height: "auto",
+          mt: "20px",
+         
+        }
       }}
     >
       <Box
         sx={{
           height: "100%",
-          width: "50%",
+          width: "45%",
+          '@media(max-Width: 700px)' : {
+            width: "100%",
+            mt:"30px"
+           
+          }
         }}
       >
-        <img src={data?.img} height="100%" width="90%" alt="" />
+        <img src={data?.img} height="100%" width="100%" alt="" />
       </Box>
       <Box
         sx={{
           width: "50%",
+       
           display: "flex",
           height: "100%",
           flexDirection: "column",
@@ -46,6 +62,10 @@ export default function ProductBox({ data, index = 0 }) {
           // alignContent: "center",
           // justifyItems: "center",
           // alignItems: "start",
+          '@media(max-Width: 700px)' : {
+            width: "100%",
+           
+          },
         }}
       >
         <Typography
@@ -53,6 +73,12 @@ export default function ProductBox({ data, index = 0 }) {
           sx={{
             padding: "8px 16px 8px 16px",
             mb: "-10px",
+
+            '@media(max-Width: 700px)' : {
+          fontSize:"29px",
+            padding: "8px 10px 8px 10px",
+             
+            },
           }}
         >
           {data?.name}
@@ -90,7 +116,7 @@ export default function ProductBox({ data, index = 0 }) {
                     fontSize: "20px",
                     fontWeight: 500,
                     marginLeft: "-30px",
-
+                    
                     fontFamily: "SF Pro Display",
                   }}
                   primary={el}
