@@ -31,6 +31,9 @@ export default function Products() {
     "R.O. Antiscalants and Cleaners",
   ];
   const [buttonData, setButtonData] = useState(init);
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     // document.getElementById("keyfacts").style.display = "none";

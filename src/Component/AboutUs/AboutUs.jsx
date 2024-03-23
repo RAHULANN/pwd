@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../Header/Header";
 import { Box, Typography } from "@mui/material";
 // import {
@@ -19,6 +19,9 @@ import Four from "../../utilities/Icons/aboutus/four.png";
 
 import Footer from "../Footer/Footer";
 export default function AboutUs() {
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   return (
     <div
       style={{
@@ -45,6 +48,7 @@ export default function AboutUs() {
 
           '@media(max-width: 700px)' : {
             width:"96vw",
+            marginLeft:"auto",
             padding: "0px 10px 10px 0px",
            
           }
@@ -61,16 +65,21 @@ export default function AboutUs() {
             fontWeight: "500",
             fontSize: "48px",
             // border: "1px solid red",
-            width: "70vw",
+            width: "50vw",
             // marginLeft: "auto",
-            paddingLeft: "5%",
+            // paddingLeft: "5%",
             justifyContent: "center",
             alignContent: "center",
+            margin:"auto",
             '@media(max-width: 700px)' : {
-               
+              //  border:"1px solid red",
+               alignContent:"center",
             fontSize: "28px",
             padding: "0px",
-            width: "100%",
+            paddingLeft: "auto",
+            lineHeight:"35px", 
+            width: "97vw",
+            margin:"auto",
 
              
             }

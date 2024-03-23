@@ -36,6 +36,9 @@ export default function Header({ page }) {
 
   return (
     <header className="Header">
+      <Link to={"/"}> 
+      
+      
       <img src={logo} className="Logo" alt="logo"  
       
       
@@ -45,6 +48,8 @@ export default function Header({ page }) {
         },
       }}
       />
+       </Link>
+      
 
       <CSSTransition
         in={!isSmallScreen || isNavVisible}

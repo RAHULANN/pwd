@@ -25,6 +25,10 @@ export default function Home() {
   });
   const navigate = useNavigate();
 
+  const [pageUpdate,setPageUpdate]=useState(false)
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   const [contactUsPopUpState, setContactUsPopUpState] = useState(false);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -61,7 +65,7 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  console.log(currents);
+
   return (
     <div>
       <Header page={"Home"} />

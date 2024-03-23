@@ -83,7 +83,7 @@ export default function   Abautus() {
             </span>
             At PDWT Chemicals, we understand the unique challenges faced by our
             clients.
-            <br />
+         
              Our approach isn't just about efficiency – it's a
             commitment to scale prevention, ensuring the longevity of your
             equipment and the uninterrupted rhythm of your operations.
