@@ -23,7 +23,7 @@ export default function HomeProducts() {
         margin: "40px auto auto auto",
         '@media(max-width: 700px)' : {
           gridTemplateColumns: "1fr",
-          width: "99%",
+          width: "95%",
           margin: "10px auto auto auto",
           mt:"40px"
          

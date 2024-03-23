@@ -32,7 +32,8 @@ export default function Contectus() {
         gap: "40px",
         '@media(max-width: 700px)' : {
           display: "flex",
-          width: "99vw",
+          width: "98vw",
+          margin:"auto",
          flexDirection:"column-reverse",
         padding: "50px 0px 50px 0px",
 

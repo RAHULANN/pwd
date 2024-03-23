@@ -178,7 +178,8 @@ export default function Home() {
         <Box
           sx={{
             background: "#F3F2F6",
-            width: "95%",
+            width: "100%",
+           
             pb: "50px",
             margin:"auto"
          
@@ -472,6 +473,9 @@ export default function Home() {
           id="contectus"
           style={{
             height: currents?.contectus ? "" : "500px",
+        background: "#F3F2F6",
+        margin:"auto",
+
           }}
         >
           {currents?.contectus && <Contectus />}
