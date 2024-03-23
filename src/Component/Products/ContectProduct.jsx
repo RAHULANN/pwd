@@ -55,6 +55,14 @@ export default function ContectProduct() {
         gap: "40px",
         height: "450px",
         margin: "50px auto 50px auto",
+        '@media(max-Width: 700px)' : {
+          gridTemplateColumns: "1fr",
+          height: "auto",
+          padding: "10px 10px 10px 10px",
+          margin: "10px auto 10px auto",
+          width: "98%",
+         
+        }
       }}
     >
       <Box
@@ -144,15 +152,25 @@ export default function ContectProduct() {
           gridGap: "20px",
           gap: "20px",
           boxShadow: "9px 10px 36.099998474121094px 0px rgba(0, 0, 0, 0.12)",
+          '@media(max-Width: 700px)' : {
+            padding: "1px",
+           
+          }
         }}
       >
-        <Box>
+        <Box sx={{
+            width: "34vw",
+            '@media(max-width: 700px)' : {
+              width: "80vw",
+         
+            }
+        }}>
           <input
             style={{
-              width: "34vw",
+              width:"100%",
               height: "40px",
               marginTop: "50px",
-              paddingLeft: "20px",
+              // paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
@@ -164,15 +182,21 @@ export default function ContectProduct() {
               setFormData((prev) => ({ ...prev, name: e.target.value }));
             }}
             required={true}
-            placeholder={"Name *"}
+            placeholder={" Name *"}
           />
         </Box>
-        <Box>
+        <Box sx={{
+            width: "34vw",
+            '@media(max-width: 700px)' : {
+              width: "80vw",
+         
+            }
+        }}>
           <input
             style={{
-              width: "34vw",
+              width: "100%",
               height: "40px",
-              paddingLeft: "20px",
+              // paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
@@ -184,16 +208,22 @@ export default function ContectProduct() {
               setFormData((prev) => ({ ...prev, email: e.target.value }));
             }}
             required={true}
-            placeholder={"E-Mail ID *"}
+            placeholder={" E-Mail ID *"}
           />
         </Box>
-        <Box>
+        <Box sx={{
+            width: "34vw",
+            '@media(max-width: 700px)' : {
+              width: "80vw",
+         
+            }
+        }}>
           <input
             style={{
-              width: "34vw",
+              width: "100%",
               height: "40px",
 
-              paddingLeft: "20px",
+              // paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
@@ -209,14 +239,20 @@ export default function ContectProduct() {
           />
         </Box>
 
-        <Box>
+        <Box sx={{
+            width: "34vw",
+            '@media(max-width: 700px)' : {
+              width: "80vw",
+         
+            }
+        }}>
           <textarea
             style={{
-              width: "34vw",
+              width: "100%",
               height: "60px",
               fontFamily: "Sf pro Display",
 
-              paddingLeft: "20px",
+              // paddingLeft: "20px",
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
@@ -251,6 +287,11 @@ export default function ContectProduct() {
               ":hover": {
                 background: "#2C407C",
               },
+
+              '@media(max-width: 700px)' : {
+                width: "80vw",
+           
+              }
             }}
             onClick={() => {
               saveForm();

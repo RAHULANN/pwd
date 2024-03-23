@@ -16,6 +16,7 @@ import {
   scrollSpy,
 } from "react-scroll";
 import Footer from "../Footer/Footer";
+import "./product.css"
 
 export default function Products() {
   const [currentState, setCurrentState] = useState("prod0");
@@ -167,7 +168,14 @@ export default function Products() {
                   }}
                 >
                   {" "}
-                  <Typography variant="button"> {el}</Typography>
+                  <Typography variant="button"  sx={{
+
+'@media(max-Width: 700px)' : {
+  fontSize:"12px",
+  
+     
+    },
+                  }} > {el}</Typography>
                 </Button>{" "}
               </HashLink>
             </Box>
@@ -184,12 +192,20 @@ export default function Products() {
           <Element name={"prod" + index}>
             <section
               id={"prod" + index}
-              style={{
-                height: "65vh",
-                paddingTop: "100px",
-                scrollBehavior: "smooth",
-                marginBottom: "-30px",
-              }}
+              className="productBoxForPro"
+              // style={{
+              //   height: "65vh",
+              //   paddingTop: "100px",
+              //   scrollBehavior: "smooth",
+              //   marginBottom: "-30px",
+              //  "@media(max-width: 700px)" : {
+              //     // width: "100%",
+              //     height: "",
+              //     marginBottom: "0px",
+              //     border:"1px solid red"
+                 
+              //   },
+              // }}
             >
               {currentState == "prod0" && index == 0 && (
                 <Box
@@ -214,6 +230,11 @@ export default function Products() {
                         color: "#2C2C2E",
                         fontSize: "22px",
                         fontWeight: 600,
+
+                        '@media(max-width: 700px)' : {
+                        
+                          fontSize: "18px",
+                        }
                       }}
                     >
                       Welcome to PDWT Chemicals –
