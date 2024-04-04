@@ -38,7 +38,7 @@ export default function ContectProduct() {
       .then(() => {
         // handleClose();
         setFormData(init)
-        toast.success("Saved successfully")
+        toast.success("Submitted successfully")
       })
       .catch((er) => {
         toast.error("something went wrong")
