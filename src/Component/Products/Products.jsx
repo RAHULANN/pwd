@@ -17,6 +17,7 @@ import {
 } from "react-scroll";
 import Footer from "../Footer/Footer";
 import "./product.css"
+import ProMobil from "./Mobile/ProMobil";
 
 export default function Products() {
   const [currentState, setCurrentState] = useState("prod0");
@@ -95,6 +96,8 @@ export default function Products() {
     >
       <Header page={"product"} />
 
+
+      <ProMobil/>   
       <Box
         sx={{
           height: "80px",
@@ -107,6 +110,11 @@ export default function Products() {
           mt: "70px",
           zIndex: 400,
           justifyContent: "center",
+          '@media(max-Width: 700px)' : {
+          display:"none"
+            
+               
+              },
         }}
       >
         <Sc currentState={currentState} prevState={prevState}>
@@ -117,38 +125,7 @@ export default function Products() {
               }}
             >
               {" "}
-              {/* <Link
-                to={`prod${index}`}
-                marginHeight={100}
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-              >
-                <Button
-                  sx={{
-                    background: currentState == "prod" + index ? "#2A4596" : "",
-
-                    color:
-                      currentState == "prod" + index ? "#FFFFFF" : "#636366",
-                    ":hover": {
-                      background: "",
-                    },
-                  }}
-                  onClick={() => {
-                    console.log(el);
-                    // setCurrentState("prod" + index);
-
-                    setCurrentState((prev) => {
-                      setPrevState(prev.split("prod")[1]);
-                      return "prod" + index;
-                    });
-                  }}
-                >
-                  {" "}
-                  <Typography variant="button"> {el}</Typography>
-                </Button>{" "}
-              </Link> */}
+             
               <HashLink to={`/Products#prod${index}`}>
                 <Button
                   sx={{
@@ -185,7 +162,15 @@ export default function Products() {
           ))}
         </Sc>
       </Box>
-      <Box>
+      <Box sx={{
+
+'@media(max-Width: 700px)' : {
+  display:"none"
+    
+       
+      }
+
+      }}>
         {/* {dataArr?.map((el, index) => (
           <section id={"prod" + index}>
             <ProductBox data={el} index={index} />

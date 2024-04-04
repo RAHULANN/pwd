@@ -15,9 +15,13 @@ import FontPage from "./fontPage";
 import Login from "./Component/Login/Login";
 import HomeTable from "./Component/Admin/adminHome";
 import AboutUs from "./Component/AboutUs/AboutUs";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+  
 function App() {
   return (
     <div className="App">
+         <ToastContainer />
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

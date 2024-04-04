@@ -15,6 +15,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import "../Contect/contect.css";
 import LabelIcon from "@mui/icons-material/Label";
 import { handleSubmit } from "../Contect/formFirebase";
+import { toast } from "react-toastify";
 
 export default function ContectProduct() {
   const [data, setData] = useState([
@@ -36,9 +37,13 @@ export default function ContectProduct() {
     handleSubmit(formData)
       .then(() => {
         // handleClose();
+        setFormData(init)
+        toast.success("Saved successfully")
       })
       .catch((er) => {
-        alert("something went wrong");
+        toast.error("something went wrong")
+
+        
       });
   };
   return (
@@ -235,6 +240,8 @@ export default function ContectProduct() {
               setFormData((prev) => ({ ...prev, phone: e.target.value }));
             }}
             required={true}
+            type="number"
+
             placeholder={"Phone number *"}
           />
         </Box>

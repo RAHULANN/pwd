@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { db } from "../../Firebase.js"; // Import the Firebase configuration
 const handleSubmit = async (formData) => {
   try {
@@ -12,9 +13,13 @@ const handleSubmit = async (formData) => {
     // Clear form fields after submission
     // setName("");
     // setEmail("");
+    toast.success("Saved successfully")
+
     return;
   } catch (error) {
     console.error("Error submitting form:", error);
+    toast.error("Error submitting form")
+
     return;
     // alert("An error occurred while submitting the form.");
   }

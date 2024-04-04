@@ -6,6 +6,7 @@ import { handleSubmit } from "./formFirebase";
 // import { Linkedin, Whatsapp } from "../../utilities/Icons/Icons";
 import Linkedin from "../../utilities/Icons/linkendIn.svg";
 import Whatsapp from "../../utilities/Icons/whatsapp.svg";
+import { toast } from "react-toastify";
 
 export default function Contectus() {
   const init = {
@@ -17,7 +18,18 @@ export default function Contectus() {
   const [formData, setFormData] = useState(init);
 
   const saveForm = async () => {
-    await handleSubmit(formData);
+    handleSubmit(formData)
+    .then(() => {
+      toast.success("Submitted successfully")
+
+
+      setFormData(init)
+    })
+    .catch((er) => {
+      toast.error("Error submitting form")
+    
+      // alert("something went wrong");
+    });
   };
   return (
     <Box
@@ -238,12 +250,15 @@ export default function Contectus() {
               outline: "none",
               fontSize: "20px",
               color: "#222224",
+
             }}
             value={formData.phone}
             onChange={(e) => {
               setFormData((prev) => ({ ...prev, phone: e.target.value }));
             }}
             required={true}
+            type="number"
+
             placeholder={" Phone number *"}
           />
         </Box>
