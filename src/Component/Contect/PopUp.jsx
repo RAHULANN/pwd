@@ -10,6 +10,7 @@ import Linkedin from "../../utilities/Icons/linkendIn.svg";
 import Whatsapp from "../../utilities/Icons/whatsapp.svg";
 import { Navigate, useNavigate } from "react-router";
 import { handleSubmit } from "./formFirebase";
+import { toast } from "react-toastify";
 
 const ContactUsPopUp = (props) => {
   const { onClose, open, editDeleteState } = props;
@@ -30,10 +31,16 @@ const ContactUsPopUp = (props) => {
   const saveForm = async () => {
     handleSubmit(formData)
       .then(() => {
+        toast.success("Submitted successfully")
+
+
         handleClose();
+        setFormData(init)
       })
       .catch((er) => {
-        alert("something went wrong");
+    toast.error("Error submitting form")
+      
+        // alert("something went wrong");
       });
   };
   return (

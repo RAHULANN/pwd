@@ -275,7 +275,7 @@ export default function Home() {
                   sx={{
                     '@media(max-width: 700px)' : {
                    
-                   fontSize:"16px"
+                   fontSize:"24px"
                     }
                   }}
                   >
