@@ -288,7 +288,8 @@ export default function Home() {
                     '@media(max-width: 700px)' : {
                    
                     
-                     fontSize:"12px"
+                      fontSize:"16px"
+
                        }
                   }}
                   
@@ -314,7 +315,8 @@ export default function Home() {
                    
 
                     
-                     fontSize:"12px"
+                      fontSize:"16px"
+
                        }
                   }}
                   >
