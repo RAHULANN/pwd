@@ -263,7 +263,18 @@ const ContactUsPopUp = (props) => {
                   }
               }}
               >
-                           <img src={Whatsapp} width={"100%"} alt="" />
+                           <img src={Whatsapp}
+                           
+                           style={{
+                            cursor:"pointer"
+                          }}
+                           onClick={()=>{
+
+
+                            window.open("https://wa.me/message/NC6XHOBQM5YXP1", '_blank').focus();
+                                    
+                                    }} 
+                           width={"100%"} alt="" />
 
 
               </Box>

@@ -137,7 +137,17 @@ export default function ContectProduct() {
           }}
         >
           <img src={Linkedin} height="100%" alt="linked in" />
-          <img src={Whatsapp} height="100%" alt="whatsapp" />
+          <img src={Whatsapp}
+          style={{
+            cursor:"pointer"
+          }}
+              onClick={()=>{
+
+
+                window.open("https://wa.me/message/NC6XHOBQM5YXP1", '_blank').focus();
+                        
+                        }} 
+          height="100%" alt="whatsapp" />
         </Box>
       </Box>
       <Box

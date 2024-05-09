@@ -147,7 +147,17 @@ export default function Contectus() {
           }}
         >
           <img src={Linkedin} alt="" />
-          <img src={Whatsapp} alt="" />
+          <img src={Whatsapp} 
+           style={{
+            cursor:"pointer"
+          }}
+          onClick={()=>{
+
+
+window.open("https://wa.me/message/NC6XHOBQM5YXP1", '_blank').focus();
+        
+        }} 
+        alt="" />
 
           {/* <Linkedin /> */}
           {/* <Whatsapp /> */}
