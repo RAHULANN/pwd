@@ -38,8 +38,8 @@ const ContactUsPopUp = (props) => {
         setFormData(init)
       })
       .catch((er) => {
-    toast.error("Error submitting form")
-      
+        toast.error("Error submitting form")
+
         // alert("something went wrong");
       });
   };
@@ -49,13 +49,13 @@ const ContactUsPopUp = (props) => {
       fullWidth={true}
       sx={{
         height: "650px",
-        mt:"50px",
-        '@media(max-width: 700px)' : {
-        
-          width: "100vw",
-    
+        mt: "50px",
+        '@media(max-width: 700px)': {
 
-          }
+          width: "100vw",
+
+
+        }
         // width: "900px",
       }}
       PaperProps={{
@@ -132,14 +132,14 @@ const ContactUsPopUp = (props) => {
             gridTemplateColumns: "50% 40%",
             justifyContent: "center",
             gap: "30px",
-            '@media(max-width: 700px)' : {
+            '@media(max-width: 700px)': {
               display: "flex",
               width: "80vw",
-              margin:"auto",
-             flexDirection:"column-reverse",
-            padding: "10px 0px 10px 0px",
-    
-              }
+              margin: "auto",
+              flexDirection: "column-reverse",
+              padding: "10px 0px 10px 0px",
+
+            }
           }}
         >
           <Box
@@ -158,9 +158,9 @@ const ContactUsPopUp = (props) => {
                 gap: "30px",
                 mt: "50px",
                 fontFamily: "Sf pro Display",
-                '@media(max-width: 700px)' : {
+                '@media(max-width: 700px)': {
                   padding: "10px",
-                  }
+                }
               }}
             >
               <Typography variant="body3">
@@ -232,54 +232,66 @@ const ContactUsPopUp = (props) => {
                 padding: "40px",
                 gap: "30px",
                 // height: "30px",
-                width:"50%",
+                width: "50%",
                 mt: "50px",
-                    
-          '@media(max-width: 700px)' : {
-            
-            width:"70%"
-            }
+
+                '@media(max-width: 700px)': {
+
+                  width: "70%"
+                }
               }}
             >
-              <Box  
-              
-              sx={{
-                '@media(max-width: 700px)' : {
-            
-                  width:"50%"
+              <Box
+
+                sx={{
+                  '@media(max-width: 700px)': {
+
+                    width: "50%"
                   }
-              }}
+                }}
               >
-              <img src={Linkedin} width={"100%"} alt="" />
+
+                <img src={Linkedin}
+
+                  style={{
+                    cursor: "pointer"
+                  }}
+                  onClick={() => {
+
+
+                    window.open("https://www.linkedin.com/company/p-d-sales-corporation/", '_blank').focus();
+
+                  }}
+                  width={"100%"} alt="Linkedin pd sales" />
 
               </Box>
 
-              <Box  
-              
-              sx={{
-                '@media(max-width: 700px)' : {
-            
-                  width:"50%"
+              <Box
+
+                sx={{
+                  '@media(max-width: 700px)': {
+
+                    width: "50%"
                   }
-              }}
+                }}
               >
-                           <img src={Whatsapp}
-                           
-                           style={{
-                            cursor:"pointer"
-                          }}
-                           onClick={()=>{
+                <img src={Whatsapp}
+
+                  style={{
+                    cursor: "pointer"
+                  }}
+                  onClick={() => {
 
 
-                            window.open("https://wa.me/message/NC6XHOBQM5YXP1", '_blank').focus();
-                                    
-                                    }} 
-                           width={"100%"} alt="" />
+                    window.open("https://wa.me/message/NC6XHOBQM5YXP1", '_blank').focus();
+
+                  }}
+                  width={"100%"} alt="" />
 
 
               </Box>
 
-          
+
             </Box>
           </Box>
           <Box
@@ -299,22 +311,22 @@ const ContactUsPopUp = (props) => {
               gridGap: "20px",
               boxShadow:
                 "9px 10px 36.099998474121094px 0px rgba(0, 0, 0, 0.12)",
-                
-          '@media(max-width: 700px)' : {
-            padding: "0px",
-            }
+
+              '@media(max-width: 700px)': {
+                padding: "0px",
+              }
             }}
           >
-              <Box sx={{
-          width:"95%",
-          '@media(max-width: 700px)' : {
-            width: "75vw",
-            padding: "0px, 1px, 0px, 1px",
-            display:"flex",
-            justifyContent:"center",
-            mt:"20px" 
-            }
-        }}>
+            <Box sx={{
+              width: "95%",
+              '@media(max-width: 700px)': {
+                width: "75vw",
+                padding: "0px, 1px, 0px, 1px",
+                display: "flex",
+                justifyContent: "center",
+                mt: "20px"
+              }
+            }}>
               <input
                 style={{
                   width: "100%",
@@ -335,15 +347,15 @@ const ContactUsPopUp = (props) => {
               />
             </Box>
             <Box sx={{
-          width:"95%",
-          '@media(max-width: 700px)' : {
-            width: "75vw",
-            padding: "0px, 1px, 0px, 1px",
-            display:"flex",
-            justifyContent:"center"
-          
-            }
-        }}>
+              width: "95%",
+              '@media(max-width: 700px)': {
+                width: "75vw",
+                padding: "0px, 1px, 0px, 1px",
+                display: "flex",
+                justifyContent: "center"
+
+              }
+            }}>
               <input
                 style={{
                   width: "100%",
@@ -365,15 +377,15 @@ const ContactUsPopUp = (props) => {
               />
             </Box>
             <Box sx={{
-          width:"95%",
-          '@media(max-width: 700px)' : {
-            width: "75vw",
-            padding: "0px, 1px, 0px, 1px",
-            display:"flex",
-            justifyContent:"center"
-          
-            }
-        }}>
+              width: "95%",
+              '@media(max-width: 700px)': {
+                width: "75vw",
+                padding: "0px, 1px, 0px, 1px",
+                display: "flex",
+                justifyContent: "center"
+
+              }
+            }}>
               <input
                 style={{
                   width: "100%",
@@ -397,15 +409,15 @@ const ContactUsPopUp = (props) => {
             </Box>
 
             <Box sx={{
-          width:"95%",
-          '@media(max-width: 700px)' : {
-            width: "75vw",
-            padding: "0px, 1px, 0px, 1px",
-            display:"flex",
-            justifyContent:"center"
-          
-            }
-        }}>
+              width: "95%",
+              '@media(max-width: 700px)': {
+                width: "75vw",
+                padding: "0px, 1px, 0px, 1px",
+                display: "flex",
+                justifyContent: "center"
+
+              }
+            }}>
               <textarea
                 style={{
                   width: "100%",
@@ -446,13 +458,13 @@ const ContactUsPopUp = (props) => {
                   ":hover": {
                     background: "#2C407C",
                   },
-                  '@media(max-width: 700px)' : {
+                  '@media(max-width: 700px)': {
                     width: "75vw",
                     padding: "0px, 1px, 0px, 1px",
-                    mb:"20px"
-                  
-                  
-                    }
+                    mb: "20px"
+
+
+                  }
                 }}
                 onClick={() => {
                   saveForm();

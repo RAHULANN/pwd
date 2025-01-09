@@ -146,7 +146,18 @@ export default function Contectus() {
             mt: "50px",
           }}
         >
-          <img src={Linkedin} alt="" />
+          <img src={Linkedin}
+          
+          style={{
+            cursor: "pointer"
+          }}
+          onClick={() => {
+
+
+            window.open("https://www.linkedin.com/company/p-d-sales-corporation/", '_blank').focus();
+
+          }}
+          alt="p-d-sales-corporation" />
           <img src={Whatsapp} 
            style={{
             cursor:"pointer"
