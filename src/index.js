@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import AppThemeProvider from "./utilities/Theme/Theme";
 import { AuthProvider } from "./Component/Login/Auth"; // Import AuthProvider
 import ReactGA from 'react-ga';
-ReactGA.initialize('G-1P23QXMEKZ');
+ReactGA.initialize('G-7VMS24WPKF');
 ReactGA.pageview(window.location.pathname);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
