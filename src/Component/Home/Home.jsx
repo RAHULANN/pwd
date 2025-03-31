@@ -19,6 +19,7 @@ import { Years } from "../../utilities/Icons/Icons";
 import { useNavigate } from "react-router-dom";
 import Abautus from "./Abautus";
 import Footer from "../Footer/Footer";
+import ReactGA from 'react-ga';
 export default function Home() {
   const [currents, setCurrents] = useState({
     home: "home",
@@ -28,6 +29,12 @@ export default function Home() {
   const [pageUpdate,setPageUpdate]=useState(false)
   useEffect(()=>{
     window.scrollTo(0, 0);
+    
+    ReactGA.event({
+      category: 'Home page',
+      action: 'user have landed in home page',
+  
+    });
   },[])
   const [contactUsPopUpState, setContactUsPopUpState] = useState(false);
   useEffect(() => {
@@ -73,6 +80,10 @@ export default function Home() {
         open={contactUsPopUpState}
         onClose={() => {
           setContactUsPopUpState(false);
+          ReactGA.event({
+            category: 'Home page click on CONTACT US',
+            action: 'CONTACT US button clicked',
+          });
         }}
       />
       <div
@@ -152,6 +163,12 @@ export default function Home() {
                   }}
                   onClick={() => {
                     setContactUsPopUpState(true);
+
+                    ReactGA.event({
+                      category: 'Home page click on Get A Call Back',
+                      action: 'Get A Call Back button clicked',
+                  
+                    });
                   }}
                 >
                   <Typography variant="button1">Get A Call Back</Typography>
@@ -334,6 +351,11 @@ export default function Home() {
                     <Button
                       onClick={() => {
                         navigate("/Products");
+                        ReactGA.event({
+                          category: 'Home page click on product',
+                          action: 'Read more button clicked',
+                      
+                        });
                       }}
                       sx={{
                         background: "#F2f2f7",

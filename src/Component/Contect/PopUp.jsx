@@ -11,7 +11,7 @@ import Whatsapp from "../../utilities/Icons/whatsapp.svg";
 import { Navigate, useNavigate } from "react-router";
 import { handleSubmit } from "./formFirebase";
 import { toast } from "react-toastify";
-
+import ReactGA from 'react-ga';
 const ContactUsPopUp = (props) => {
   const { onClose, open, editDeleteState } = props;
 
@@ -468,6 +468,10 @@ const ContactUsPopUp = (props) => {
                 }}
                 onClick={() => {
                   saveForm();
+                  ReactGA.event({
+                    category: 'Get A Call Back on form popup',
+                    action: 'user clicked on Get A Call Back on form popup',
+                  });
                 }}
               >
                 <Typography variant="button1">Get A Call Back</Typography>

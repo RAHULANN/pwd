@@ -7,7 +7,7 @@ import { handleSubmit } from "./formFirebase";
 import Linkedin from "../../utilities/Icons/linkendIn.svg";
 import Whatsapp from "../../utilities/Icons/whatsapp.svg";
 import { toast } from "react-toastify";
-
+import ReactGA from 'react-ga';
 export default function Contectus() {
   const init = {
     name: "",
@@ -155,6 +155,10 @@ export default function Contectus() {
 
 
             window.open("https://www.linkedin.com/company/p-d-sales-corporation/", '_blank').focus();
+                ReactGA.event({
+                            category: 'user clicked on linkedin icon',
+                            action: 'user clicked on linkedin icon',
+                          });
 
           }}
           alt="p-d-sales-corporation" />
@@ -166,6 +170,10 @@ export default function Contectus() {
 
 
 window.open("https://wa.me/message/NC6XHOBQM5YXP1", '_blank').focus();
+ReactGA.event({
+  category: 'user clicked on Whatsapp icon',
+  action: 'user clicked on Whatsapp icon',
+});
         
         }} 
         alt="" />
@@ -341,6 +349,10 @@ window.open("https://wa.me/message/NC6XHOBQM5YXP1", '_blank').focus();
             }}
             onClick={() => {
               saveForm();
+              ReactGA.event({
+                category: 'Get A Call Back on product page',
+                action: 'user clicked on Get A Call Back on product page',
+              });
             }}
           >
             <Typography variant="button1">Get A Call Back</Typography>

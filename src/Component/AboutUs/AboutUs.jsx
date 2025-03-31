@@ -13,7 +13,7 @@ import Second from "../../utilities/Icons/aboutus/second.png";
 import Three from "../../utilities/Icons/aboutus/three.png";
 import Four from "../../utilities/Icons/aboutus/four.png";
 
-
+import ReactGA from 'react-ga';
 
 
 
@@ -21,6 +21,10 @@ import Footer from "../Footer/Footer";
 export default function AboutUs() {
   useEffect(()=>{
     window.scrollTo(0, 0);
+     ReactGA.event({
+                category: 'about us page',
+                action: 'user landed on about us page',
+              });
   },[])
   return (
     <div
