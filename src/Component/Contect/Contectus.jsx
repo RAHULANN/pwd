@@ -7,7 +7,7 @@ import { handleSubmit } from "./formFirebase";
 import Linkedin from "../../utilities/Icons/linkendIn.svg";
 import Whatsapp from "../../utilities/Icons/whatsapp.svg";
 import { toast } from "react-toastify";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 export default function Contectus() {
   const init = {
     name: "",
@@ -221,7 +221,7 @@ ReactGA.event({
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              fontSize: "20px",
+              fontSize: "14px",
               color: "#222224",
              
             }}
@@ -249,7 +249,7 @@ ReactGA.event({
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              fontSize: "20px",
+              fontSize: "14px",
               color: "#222224",
             }}
             placeholder={" E-Mail ID *"}
@@ -277,7 +277,7 @@ ReactGA.event({
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              fontSize: "20px",
+              fontSize: "14px",
               color: "#222224",
 
             }}
@@ -310,7 +310,7 @@ ReactGA.event({
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              fontSize: "20px",
+              fontSize: "14px",
               color: "#222224",
             }}
             placeholder={" How can we help you "}

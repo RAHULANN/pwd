@@ -5,9 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import AppThemeProvider from "./utilities/Theme/Theme";
 import { AuthProvider } from "./Component/Login/Auth"; // Import AuthProvider
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 ReactGA.initialize('G-7VMS24WPKF');
-ReactGA.pageview(window.location.pathname);
+ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: "" });
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

@@ -16,7 +16,7 @@ import "../Contect/contect.css";
 import LabelIcon from "@mui/icons-material/Label";
 import { handleSubmit } from "../Contect/formFirebase";
 import { toast } from "react-toastify";
-
+import ReactGA from 'react-ga4';
 export default function ContectProduct() {
   const [data, setData] = useState([
     "Comprehensive range of tailor-made formulations.",
@@ -189,7 +189,7 @@ export default function ContectProduct() {
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              fontSize: "20px",
+              fontSize: "14px",
               color: "#222224",
             }}
             value={formData.name}
@@ -215,7 +215,8 @@ export default function ContectProduct() {
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              fontSize: "20px",
+              fontSize: "14px",
+
               color: "#222224",
             }}
             value={formData.email}
@@ -242,7 +243,8 @@ export default function ContectProduct() {
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              fontSize: "20px",
+              fontSize: "14px",
+
               color: "#222224",
             }}
             value={formData.phone}
@@ -273,7 +275,7 @@ export default function ContectProduct() {
               border: "1px solid rgba(0, 0, 0, 0.3)",
               borderRadius: "13px",
               outline: "none",
-              fontSize: "20px",
+              fontSize: "14px",
               color: "#222224",
             }}
             value={formData.howwecanhelp}
@@ -311,6 +313,11 @@ export default function ContectProduct() {
               }
             }}
             onClick={() => {
+                 ReactGA.event({
+                    category: 'Get A Call Back on product page',
+                    action: 'user have clicked Get A Call Back',
+                
+                  });
               saveForm();
             }}
           >

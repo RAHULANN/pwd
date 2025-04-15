@@ -11,7 +11,7 @@ import Whatsapp from "../../utilities/Icons/whatsapp.svg";
 import { Navigate, useNavigate } from "react-router";
 import { handleSubmit } from "./formFirebase";
 import { toast } from "react-toastify";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 const ContactUsPopUp = (props) => {
   const { onClose, open, editDeleteState } = props;
 
@@ -331,7 +331,7 @@ const ContactUsPopUp = (props) => {
                 style={{
                   width: "100%",
                   height: "60px",
-                  fontSize: "20px",
+                  fontSize: "14px",
                   // paddingLeft: "20px",
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
@@ -364,7 +364,7 @@ const ContactUsPopUp = (props) => {
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
                   outline: "none",
-                  fontSize: "20px",
+                  fontSize: "14px",
                   color: "#222224",
                 }}
                 type="email"
@@ -395,7 +395,7 @@ const ContactUsPopUp = (props) => {
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
                   outline: "none",
-                  fontSize: "20px",
+                  fontSize: "14px",
                   color: "#222224",
                 }}
                 value={formData.phone}
@@ -427,7 +427,7 @@ const ContactUsPopUp = (props) => {
                   border: "1px solid rgba(0, 0, 0, 0.3)",
                   borderRadius: "13px",
                   outline: "none",
-                  fontSize: "20px",
+                  fontSize: "14px",
                   color: "#222224",
                 }}
                 placeholder={" How can we help you "}

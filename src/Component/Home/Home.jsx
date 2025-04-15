@@ -19,7 +19,8 @@ import { Years } from "../../utilities/Icons/Icons";
 import { useNavigate } from "react-router-dom";
 import Abautus from "./Abautus";
 import Footer from "../Footer/Footer";
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
+
 export default function Home() {
   const [currents, setCurrents] = useState({
     home: "home",

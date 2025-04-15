@@ -13,7 +13,8 @@ import Second from "../../utilities/Icons/aboutus/second.png";
 import Three from "../../utilities/Icons/aboutus/three.png";
 import Four from "../../utilities/Icons/aboutus/four.png";
 
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
+
 
 
 
@@ -459,7 +460,7 @@ export default function AboutUs() {
                 fontWeight: "500",
               }}
             >
-              FOUNDER OF PD SALES CORPORATION
+              FOUNDER OF P.D. SALES CORPORATION
             </Typography>
           </Box>
         </Box>
